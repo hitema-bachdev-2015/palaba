@@ -1,12 +1,12 @@
 <div id="blocAdd">
 	<div id="add">
-	<input type="text" id="inputTask" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter the new task here...">
+	<input type="text" id="inputTask" name="content-task" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter the new task here...">
 	<div id="blocParams">
 		<div id="selectCateg">
-			<select>
-				<option>Maison</option>
-				<option>Travail</option>
-				<option>Noel</option>
+			<select name="id-category">
+				<option value="0">Maison</option>
+				<option value="1">Travail</option>
+				<option value="2">Noel</option>
 			</select>
 		</div>
 		<div id="dateChoose">
