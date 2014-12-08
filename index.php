@@ -3,6 +3,9 @@
 	{
 		require_once('/wamp/www/PaLaBa/defines.inc.php');
 	}
+	elseif(file_exists('/Applications/MAMP/htdocs/PaLaBa/defines.inc.php')){
+		require_once('/Applications/MAMP/htdocs/PaLaBa/defines.inc.php');
+	}
 	else
 	{
 		define('_DB_NAME_', 'todolist');
