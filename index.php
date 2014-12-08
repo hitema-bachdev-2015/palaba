@@ -8,8 +8,9 @@
 	}
 	else
 	{
+		define('_DB_HOST_', 'localhost');
 		define('_DB_NAME_', 'todolist');
-		define('_DB_HOST_', 'root');
+		define('_DB_USERNAME_', 'root');
 		define('_DB_PASSWORD_', '');
 	}
 ?>
