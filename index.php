@@ -14,6 +14,7 @@
 		define('_DB_PASSWORD_', '');
 	}
 ?>
+<!DOCTYPE html>
 <html>
 <head>
 	<title></title>
