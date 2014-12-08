@@ -8,8 +8,16 @@ class Task {
 	private $end_type;
 	private $status;
 
-	function __construct($id) {
-		//Hydratation
+	function __construct($id, $id_category, $content, $date_end, $end_type, $status){
+		setid($id);
+		setContent($content);
+		setDateEnd($date_end);
+		setEndType($end_type);
+		setStatus($status);
+	}
+
+	public setid($i){
+		$this->id = $i;
 	}
 
 	public setContent($c){
@@ -27,6 +35,11 @@ class Task {
 	public setStatus($s){
 		$this->status = $s;
 	}
+
+	public getId(){
+		return $this->id;
+	}
+
 	public getContent(){
 		return $this->content;
 	}
