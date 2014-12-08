@@ -9,14 +9,14 @@ class Task {
 	private $status;
 
 	function __construct($id, $id_category, $content, $date_end, $end_type, $status){
-		setid($id);
+		setId($id);
 		setContent($content);
 		setDateEnd($date_end);
 		setEndType($end_type);
 		setStatus($status);
 	}
 
-	public setid($i){
+	public setId($i){
 		$this->id = $i;
 	}
 
