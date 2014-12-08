@@ -13,3 +13,4 @@ Task.prototype.addTask=function(params){
 	//var content = document.createTextNode("CLICK ME");       // Create a text node
 	//li.appendChild(content);                                // Append the text to <li>
 	//var insertElement = parentElement.insertBefore(li, refElement); //append before refElement
+}
