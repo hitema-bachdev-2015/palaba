@@ -10,7 +10,7 @@
 			</select>
 		</div>
 		<div id="dateChoose">
-			<input type="date">
+			<input type="text" id="datepicker" value="Choissiez la date">
 		</div>
 		<div id="type">
 			<select>
