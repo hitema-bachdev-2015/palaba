@@ -57,8 +57,11 @@ class Task {
 		return $this->status;
 	}
 	
-	public function update($cont, $dateEnd, $endType){
+	public function update(){
 
+		$req = "UPDATE TASK SET content=$this->content,end_type=$this->end_type,date_end=this->date_end WHERE this->id=id";
+		$query = $dbh->prepare($req);
+		return $query->execute();
 	}
 
 	public function delete(){
