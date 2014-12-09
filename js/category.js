@@ -1,10 +1,10 @@
 var Category=function(params){
 	this.id=params.id;
-	this.name = params.name;
-	this.position = params.position;
+	/*this.name = params.name;
+	this.position = params.position;*/
 }
 
-Category.prototype.move(){
+Category.prototype.move=function(){
 	var content; 
     $.ajax({
 
@@ -43,7 +43,7 @@ Category.prototype.move(){
     });
     $( "#sortable" ).disableSelection();
 }
-Category.prototype.addTask(idCat){
+Category.prototype.addTask=function(idCat){
 	debugger;
 	$.ajax({
 				url : 'ajax/showTasks.php',
