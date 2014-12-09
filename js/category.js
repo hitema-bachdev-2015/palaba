@@ -3,3 +3,43 @@ var Category=function(params){
 	this.name = params.name;
 	this.position = params.position;
 }
+
+Category.prototype.move(){
+	var content; 
+    $.ajax({
+
+        url: "ajax/affichage.php",
+        type: "POST",
+        dataType : "html",
+        success : function(data){
+          content = JSON.parse(data);
+          var theId;
+          var theName;
+          for(var $i=0; $i<content.length ; $i++ ){
+            theId = content[$i]["id"];
+            theName = content[$i]["name"];
+            $("#sortable").append("<li data-id_cat='"+theId+"'><h2 class='titre'>"+theName+"</h2></li>");
+          }
+        }
+      });
+
+    $( "#sortable" ).sortable({
+    	placeholder: "element_modif",
+    	handle: ".titre",
+    	revert: true,
+    	update: function(){
+    		 $(" #sortable li").each(function(){
+          console.log($(this));
+    		 	var myId = $(this)[0].attributes[0].value;
+    		 	var myIndex = $(this).index();
+		    	$.ajax({
+				  url: "ajax/move.php",
+				  type: "POST",
+				  data: { id_cat: myId, index: myIndex }
+
+				});
+		    });
+    	}
+    });
+    $( "#sortable" ).disableSelection();
+}
