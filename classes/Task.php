@@ -9,7 +9,7 @@ class Task {
 	private $status;
 
 	function __construct($id, $id_category, $content, $date_end, $end_type, $status){
-		$this->id = $i;
+		$this->id = $id;
 		$this->id_category = $id_category;
 		$this->content = $content;
 		$this->date_end = $content;
