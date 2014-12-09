@@ -1,28 +1,6 @@
 <?php
 
-if(file_exists('/wamp/www/PaLaBa/defines.inc.php'))
-{
-	require_once('/wamp/www/PaLaBa/defines.inc.php');
-}
-elseif(file_exists('/Applications/MAMP/htdocs/PaLaBa/defines.inc.php'))
-{
-	require_once('/Applications/MAMP/htdocs/PaLaBa/defines.inc.php');
-}
-elseif(file_exists('/etc/sites/palaba/defines.inc.php'))
-{
-	require_once('/etc/sites/palaba/defines.inc.php');
-}
-elseif(file_exists('/Program Files (x86)/EasyPHP-12.1/defines.inc.php'))
-{
-	require_once('/Program Files (x86)/EasyPHP-12.1/defines.inc.php');
-}
-else
-{
-	define('_DB_HOST_', 'localhost');
-	define('_DB_NAME_', 'todolist');
-	define('_DB_USERNAME_', 'root');
-	define('_DB_PASSWORD_', '');
-}
+	include('includes/dbConnect.php');
 
 	require_once('includes/bdd.php');
 	require_once('classes/Task.php');
