@@ -1,9 +1,8 @@
 //datepicker
 $(document).ready(function() {
 	// Gestion deplacement categorie
-	category = new Category();
-	category.move();
-	debugger;
+	var category = new Category({id : 3});
+	category.move();;
   	category.addTask(2);
   	$("#datepicker").datepicker();
   	$("#datepicker").hide();

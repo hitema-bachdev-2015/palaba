@@ -1,10 +1,8 @@
 var Category=function(params){
 	this.id=params.id;
-	this.name = params.name;
-	this.position = params.position;
 }
 
-Category.prototype.move(){
+Category.prototype.move=function(){
 	var content; 
     $.ajax({
 
@@ -43,8 +41,7 @@ Category.prototype.move(){
     });
     $( "#sortable" ).disableSelection();
 }
-Category.prototype.addTask(idCat){
-	debugger;
+Category.prototype.addTask=function(idCat){
 	$.ajax({
 				url : 'ajax/showTasks.php',
 				type : 'POST',
