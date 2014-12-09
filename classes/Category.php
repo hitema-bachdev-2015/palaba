@@ -6,9 +6,9 @@ class Category {
 	private $position;
 
 	function __construct($id = null, $name, $position) {
-		setId($id);
-		setName($name);
-		setPosition($position);
+		$this->id = $id;
+		$this->name = $name;
+		$this->position = $position;
 	}
 
 
