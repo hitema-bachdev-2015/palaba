@@ -1,5 +1,9 @@
 //datepicker
 $(document).ready(function() {
+	// Gestion deplacement categorie
+	category = new Category();
+	category.move();
+  	
   	$("#datepicker").datepicker();
   	$("#datepicker").hide();
   	$("#forKeyup").hide();
@@ -47,4 +51,3 @@ $(document).ready(function() {
 		});
   
 });
-
