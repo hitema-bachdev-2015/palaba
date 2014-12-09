@@ -21,6 +21,19 @@ Category.prototype.displayCat=function(){
             theName = content[$i]["name"];
             $("#sortable").append("<li data-id_cat='"+theId+"'><header><h2 class='titre'>"+theName+"</h2><i data-id_cat='"+theId+"'>s</i></header></li>");
           }
+          
+          $("#sortable > li > header >i").on('click', function(event){
+                var myId = event.currentTarget.attributes[0].value;
+                var myLi = event.currentTarget.parentNode.parentNode;
+                $.ajax({
+                  url: "ajax/supCat.php",
+                  type: "POST",
+                  data: { id: myId },
+                  success: function(){
+                        myLi.remove();
+                  }
+                });
+            });
         }
       });
 }
