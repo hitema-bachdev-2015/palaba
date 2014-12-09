@@ -1,37 +1,11 @@
+<div class="clear both"></div>
+<section class="add-cat">
+    <a class="fancybox add-cat" rel="nofollow" href="#"><i class="fa fa-plus"></i>Ajouter</a>
+</section>
 
-<div id="add-category"> 
-    <a class="fancybox" rel="nofollow" href="#">
-        Ajouter
-    </a>
+<div id="toto" style="display:none;">
+    <form method="post" action="">
+        <input type="text" name="add-category-name" placeholder="Entrer un nom de catégorie">
+        <input type="submit" value="OK">
+    </form>
 </div>
-
-
-<form method="POST" action="#">
-    <table>
-        <tr> <td> Nom : </td> <td><input type='text' name='nom'/> </td> </tr>
-        <tr> <td> Position : </td> <td> <input type="text" name="pos"/> </td> </tr>
-    </table>
-    <input type="submit" name="ok" value="OK"/>
-    <?php
-    if (isset($_POST['nom'])) {
-        
-
-        $sql = "INSERT INTO category (name, position) VALUES (:nom, :pos)";
-        $query = $dth -> prepare($sql);
-        $resul = $query -> fetchAll();
-
-        if (!isset($_POST['pos']))
-        {
-            $position = 0;
-        }else{
-            $position = $_POST['pos'];
-        }
-        $query -> execute(array(
-            ":nom" => $_POST['nom'],
-            ":pos" => $position
-            ));
-    }
-    
-    ?>
-
-</form>

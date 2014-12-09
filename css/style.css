@@ -1,11 +1,13 @@
+/* GLOBAL */
 body{
 	margin: 0;
 	padding: 0;
 	background: #fafafa;
 	font-family: 'Roboto', sans-serif;
 }
-*{font-family: 'Roboto', sans-serif !important;}
-
+.clear.both{
+	clear: both;
+}
 /* ADD TASK */
 #add-task{
 	min-width: 800px;
@@ -74,12 +76,6 @@ body{
 }
 
 
-#add-category{
-	width: 100px;
-	height: 100px;
-	border-radius: 100px;
-	background-color:#6BB9F0;
-}
 /* CATEGORY */
 #sortable {
 	margin: 0 auto;
@@ -141,4 +137,31 @@ ul#sortable li{
 
 ul#sortable li.last{
 	margin-right:0;
+}
+
+/* ADD CATEGORY */
+a.add-cat{
+	display: block;
+	width: 210px;
+	height: 20px;
+	padding:15px 0;
+	text-align: center;
+	float: right;
+	background:#4183D7;
+	text-decoration: none;
+	color: #fff;
+	line-height: 20px;
+	position: relative;
+}
+
+a.add-cat i{
+	position: absolute;
+	font-size: 20px;
+	top:17px;
+	left: 20px;
+}
+
+section.add-cat{
+	width:730px;
+	margin:80px auto;
 }
