@@ -1,7 +1,8 @@
 var Category=function(params){
 	this.id=params.id;
-	/*this.name = params.name;
-	this.position = params.position;*/
+/*this.name = params.name;
+this.position = params.position;*/
+
 }
 
 Category.prototype.move=function(){
@@ -18,7 +19,7 @@ Category.prototype.move=function(){
           for(var $i=0; $i<content.length ; $i++ ){
             theId = content[$i]["id"];
             theName = content[$i]["name"];
-            $("#sortable").append("<li data-id_cat='"+theId+"'><h2 class='titre'>"+theName+"</h2></li>");
+            $("#sortable").append("<li data-id_cat='"+theId+"'><header><h2 class='titre'>"+theName+"</h2><i data-id_cat='"+theId+"'>s</i></header></li>");
           }
         }
       });
@@ -44,7 +45,7 @@ Category.prototype.move=function(){
     $( "#sortable" ).disableSelection();
 }
 Category.prototype.addTask=function(idCat){
-	debugger;
+	//debugger;
 	$.ajax({
 				url : 'ajax/showTasks.php',
 				type : 'POST',

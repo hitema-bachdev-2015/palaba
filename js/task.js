@@ -8,6 +8,7 @@ var Task=function(params){
 	
 	addTask(params);
 }
+
 function addTask(params){
 	//Mise de l'id de l'element+1 à ajouter, dans une variable
 	var id=params.id;
@@ -21,3 +22,4 @@ function addTask(params){
 	var refElement=document.getElementById(id);// Append the text to <li>
 	var insertElement = parentElement.insertBefore(li, refElement); //append before refElement
 }
+

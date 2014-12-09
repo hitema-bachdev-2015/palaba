@@ -20,7 +20,7 @@ class Category {
 
 	public function getAllTasks($id){
 		global $dbh;
-		$query = "SELECT * FROM task WHERE id = '$id' ORDER BY end_type, date_end ASC";
+		$query = "SELECT * FROM task WHERE id_category = '$id' ORDER BY end_type, date_end ASC";
 
 		$sth = $dbh->prepare($query);
 		$reponse = $sth->execute();
@@ -34,11 +34,11 @@ class Category {
 	    	$tasks[$i]['date_end'] = $reponse['date_end'];
 	    	$tasks[$i]['end_type'] = $reponse['end_type'];
 	    	$tasks[$i]['status'] = $reponse['status'];
-	    	$task = new Task($tasks[$i]['id'], $tasks[$i]['category'], $tasks[$i]['content'], $tasks[$i]['date_end'], $tasks[$i]['end_type'], $tasks[$i]['status']);
+	    	$task[] = new Task($tasks[$i]['id'], $tasks[$i]['category'], $tasks[$i]['content'], $tasks[$i]['date_end'], $tasks[$i]['end_type'], $tasks[$i]['status']);
 	    	$i++;
-			return $task;
+			
 		}
-
+		return $task;
 	}
 	
 }

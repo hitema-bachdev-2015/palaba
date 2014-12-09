@@ -1,11 +1,17 @@
 //datepicker
 $(document).ready(function() {
 	// Gestion deplacement categorie
-	var category = new Category(3);
+	var category = new Category({id : 3});
 	category.move();
+<<<<<<< HEAD
 /*	debugger;*/
   	category.addTask(2);
   	$("#datepicker").datetimepicker();
+=======
+  	category.addTask(1);
+	
+  	$("#datepicker").datepicker();
+>>>>>>> aa1778dddd5983f2bcfb4ce773348a7c2f2365e3
   	$("#datepicker").hide();
   	$("#forKeyup").hide();
 
