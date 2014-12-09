@@ -28,7 +28,7 @@ else
 	require_once('classes/Task.php');
 	require_once('classes/Category.php');
 	require_once('classes/Tools.php');
-
+	require_once('includes/bdd.php');
 
 ?>
 
