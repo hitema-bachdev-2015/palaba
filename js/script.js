@@ -3,7 +3,8 @@ $(document).ready(function() {
 	// Gestion deplacement categorie
 	category = new category();
 	category.move();
-  	
+	debugger;
+  	category.addTask(2);
   	$("#datepicker").datepicker();
   	$("#datepicker").hide();
   	$("#forKeyup").hide();
@@ -49,4 +50,11 @@ $(document).ready(function() {
 			//alert(Content_Task+" "+Category_Task+" "+Date_Picker+" "+End_Type_Task);
 		});
   
+  	$("#btnDelete").click(function(event){
+  		event.preventDefault();
+  		$(this).parent().hide();
+
+  		
+  	});
+	
 });

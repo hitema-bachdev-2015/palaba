@@ -3,12 +3,10 @@
 class Category {
 	protected $id;
 	private $name;
-	private $position;
 
-	function __construct($id = null, $name, $position) {
+	function __construct($id = null, $name) {
 		$this->id = $id;
 		$this->name = $name;
-		$this->position = $position;
 	}
 
 
@@ -20,9 +18,6 @@ class Category {
 		$this->name = $name;
 	}
 
-	public function setPosition($position){
-		$this->position = $position;
-	}
 
 	public function getId(){
 		return $this->id;
@@ -30,10 +25,6 @@ class Category {
 
 	public function getName(){
 		return $this->name;
-	}
-
-	public function getPosition(){
-		return $this->position;
 	}
 
 
