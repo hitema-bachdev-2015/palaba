@@ -59,8 +59,6 @@ class Category {
 		}
 
 	}
+	
 }
-$chat = new Category(3, 'Noël',3);
-$visuChat =$chat->getAllTasks(3);
 
-?>
