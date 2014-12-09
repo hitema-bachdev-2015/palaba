@@ -9,11 +9,11 @@ class Task {
 	private $status;
 
 	function __construct($id, $id_category, $content, $date_end, $end_type, $status){
-		setId($id);
-		setContent($content);
-		setDateEnd($date_end);
-		setEndType($end_type);
-		setStatus($status);
+		$this->id = $i;
+		$this->content = $c;
+		$this->date_end = $de;
+		$this->end_type = $et;
+		$this->status = $s;
 	}
 
 	public function setId($i){
