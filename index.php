@@ -7,6 +7,10 @@ elseif(file_exists('/Applications/MAMP/htdocs/PaLaBa/defines.inc.php'))
 {
 	require_once('/Applications/MAMP/htdocs/PaLaBa/defines.inc.php');
 }
+elseif(file_exists('/etc/sites/palaba/defines.inc.php'))
+{
+	require_once('/etc/sites/palaba/defines.inc.php');
+}
 else
 {
 	define('_DB_HOST_', 'localhost');
