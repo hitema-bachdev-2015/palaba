@@ -1,6 +1,6 @@
 
 <?php
-$chat = new Category(3, 'Noël',3);
+$chat = new Category(3);
 $visuChat =$chat->getAllTasks(3);
 $testchat = $visuChat->getId();
 
