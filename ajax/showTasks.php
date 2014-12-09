@@ -10,7 +10,7 @@ echo "<ul>";
 foreach($visuChat as $value)
 {
 	echo "<li data-id='".$value->getId()."' >".
-	$value->getContent()."<input type=\"image\" class=\"btnDelete\" src=\"1418052398_trash-can-delete.png\" />
+	$value->getContent()."<img class=\"btnDelete\" src=\"img/corbeille.png\" />
 	</li>";
 }
 echo"</ul>";
