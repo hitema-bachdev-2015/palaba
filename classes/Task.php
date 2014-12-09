@@ -57,9 +57,9 @@ class Task {
 	}
 	
 	public function update($cont, $dateEnd, $endType){
-		$req1 = "UPDATE TASK SET $this->content WHERE this->id=id"
-		$req2 = "UPDATE TASK SET $this->date_end WHERE this->id=id"
-		$req3 = "UPDATE TASK SET $this->end_Type WHERE this->id=id"
+		$req1 = "UPDATE TASK SET $this->content WHERE this->id=id";
+		$req2 = "UPDATE TASK SET $this->date_end WHERE this->id=id";
+		$req3 = "UPDATE TASK SET $this->end_Type WHERE this->id=id";
 	}
 
 	public function delete(){
