@@ -61,6 +61,9 @@ class Task {
 	}
 
 	public function delete(){
-
+		global $dbh;
+		$sql = "DELETE FROM task WHERE this->id=id";
+		$query = $dbh->prepare($sql);
+		return $query->execute();
 	}
 }
