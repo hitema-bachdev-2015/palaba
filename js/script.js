@@ -50,4 +50,10 @@ $(document).ready(function() {
 			//alert(Content_Task+" "+Category_Task+" "+Date_Picker+" "+End_Type_Task);
 		});
   
+  	$("#btnDelete").click(function(event){
+  		event.preventDefault();
+  		$(this).parent().hide();
+
+  		
+  	});
 });
