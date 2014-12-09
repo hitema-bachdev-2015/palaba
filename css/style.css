@@ -73,6 +73,13 @@ body{
 	color: #fff;
 }
 
+
+#add-category{
+	width: 100px;
+	height: 100px;
+	border-radius: 100px;
+	background-color:#6BB9F0;
+}
 /* FOOTER */
 footer{
 	border-top:4px solid #22313F;

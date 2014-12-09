@@ -46,5 +46,7 @@ else
 	<?php include('includes/add-category.php'); ?>
 
 	<?php include('includes/footer.php'); ?>
+
+	
 </body>
 </html>
