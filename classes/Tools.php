@@ -15,6 +15,7 @@ class Tools {
 				":date"=>$date_end,
 				":end_type"=>$end_type
 			));
+			return $dbh->lastInsertId();
 	}
 	public function addCategory($name = null, $position = null){
 		
