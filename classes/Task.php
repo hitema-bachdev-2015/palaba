@@ -16,53 +16,54 @@ class Task {
 		setStatus($status);
 	}
 
-	public setId($i){
+	public function setId($i){
 		$this->id = $i;
 	}
 
-	public setContent($c){
+	public function setContent($c){
 		$this->content = $c;
 	}
 
-	public setDateEnd($de){
+	public function setDateEnd($de){
 		$this->date_end = $de;
 	}
 
-	public setEndType($et){
+	public function setEndType($et){
 		$this->end_type = $et;
 	}
 
-	public setStatus($s){
+	public function setStatus($s){
 		$this->status = $s;
 	}
 
-	public getId(){
+	public function getId(){
 		return $this->id;
 	}
 
-	public getContent(){
+	public function getContent(){
 		return $this->content;
 	}
 
-	public getDateEnd(){
+	public function getDateEnd(){
 		return $this->date_end;
 	}
 
-	public getEndType(){
+	public function getEndType(){
 		return $this->end_type;
 	}
 
-	public getStatus(){
+	public function getStatus(){
 		return $this->status;
 	}
 	
 	public function update($cont, $dateEnd, $endType){
-		$req1 = "UPDATE TASK SET $this->content WHERE this->id=id";
-		$req2 = "UPDATE TASK SET $this->date_end WHERE this->id=id";
-		$req3 = "UPDATE TASK SET $this->end_Type WHERE this->id=id";
+
 	}
 
 	public function delete(){
-
+		global $dbh;
+		$sql = "DELETE FROM task WHERE this->id=id";
+		$query = $dbh->prepare($sql);
+		return $query->execute();
 	}
 }
