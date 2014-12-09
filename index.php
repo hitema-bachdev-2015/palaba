@@ -6,7 +6,7 @@
 	require_once('classes/Task.php');
 	require_once('classes/Category.php');
 	require_once('classes/Tools.php');
-
+	require_once('includes/bdd.php');
 
 ?>
 
@@ -29,6 +29,8 @@
 </head>
 <body>
 	<?php include('includes/add-task.php'); ?>
+
+	<?php include('includes/showTasks.php');?>
 
 	<?php include('includes/content.php'); ?>
 	
