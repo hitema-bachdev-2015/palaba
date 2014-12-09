@@ -5,25 +5,7 @@ this.position = params.position;*/
 
 }
 
-Category.prototype.move=function(){
-	var content; 
-    $.ajax({
-
-        url: "ajax/affichage.php",
-        type: "POST",
-        dataType : "html",
-        success : function(data){
-          content = JSON.parse(data);
-          var theId;
-          var theName;
-          for(var $i=0; $i<content.length ; $i++ ){
-            theId = content[$i]["id"];
-            theName = content[$i]["name"];
-            $("#sortable").append("<li data-id_cat='"+theId+"'><header><h2 class='titre'>"+theName+"</h2><i data-id_cat='"+theId+"'>s</i></header></li>");
-          }
-        }
-      });
-
+Category.prototype.moveCat=function(){
     $( "#sortable" ).sortable({
     	placeholder: "element_modif",
     	handle: ".titre",
@@ -44,6 +26,7 @@ Category.prototype.move=function(){
     });
     $( "#sortable" ).disableSelection();
 }
+
 Category.prototype.addTask=function(idCat){
 	//debugger;
 	$.ajax({

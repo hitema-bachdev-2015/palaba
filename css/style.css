@@ -92,3 +92,21 @@ footer{
 	bottom:0;
 	background:#2C3E50;
 }
+
+/* CONTENT */
+
+ul#sortable{
+	display:block;
+	width:730px;
+	margin:20px auto;
+}
+
+ul#sortable li{
+	float: left;
+	width:210px;
+	margin-right:50px;
+}
+
+ul#sortable li.last{
+	margin-right:0;
+}
