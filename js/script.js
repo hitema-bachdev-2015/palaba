@@ -3,7 +3,8 @@ $(document).ready(function() {
 	// Gestion deplacement categorie
 	category = new Category();
 	category.move();
-  	
+	debugger;
+  	category.addTask(2);
   	$("#datepicker").datepicker();
   	$("#datepicker").hide();
   	$("#forKeyup").hide();
@@ -56,4 +57,5 @@ $(document).ready(function() {
 
   		
   	});
+	
 });

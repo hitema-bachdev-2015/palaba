@@ -43,3 +43,16 @@ Category.prototype.move(){
     });
     $( "#sortable" ).disableSelection();
 }
+Category.prototype.addTask(idCat){
+	debugger;
+	$.ajax({
+				url : 'ajax/showTasks.php',
+				type : 'POST',
+				data: {
+						IDCAT:idCat,
+					},
+       			success : function(data){ // code_html contient le HTML renvoyé
+       			 alert(data);
+       			}
+   			});
+}
