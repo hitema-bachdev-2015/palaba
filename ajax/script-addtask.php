@@ -7,4 +7,11 @@
 	$date=$_POST["DATE"];
 	$end_date=$_POST["END_TYPE_TASK"];
 	Tools::addTask($category,$content,$date,$end_date);
+	$tab=array(
+			"content"=>$content,
+			"category"=>$category,
+			"date"=>$date,
+			"end_type_date"=>$end_date
+		);
+		echo json_encode($tab); 
 ?>
