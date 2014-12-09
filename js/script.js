@@ -5,7 +5,7 @@ $(document).ready(function() {
 	category.move();
 /*	debugger;*/
   	category.addTask(2);
-  	$("#datepicker").datepicker();
+  	$("#datepicker").datetimepicker();
   	$("#datepicker").hide();
   	$("#forKeyup").hide();
 
