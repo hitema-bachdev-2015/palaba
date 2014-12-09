@@ -2,10 +2,21 @@
 $(document).ready(function() {
 	// Gestion deplacement categorie
 	var category = new Category({id : 3});
-	category.displayCat();
 	category.moveCat();
   	category.addTask(1);
-	
+	$("#sortable > li > header >i").on('click', function(event){
+          var myId = event.currentTarget.attributes[0].value;
+          var myLi = event.currentTarget.parentNode.parentNode;
+          $.ajax({
+            url: "ajax/supCat.php",
+            type: "POST",
+            data: { id: myId },
+            success: function(){
+                  myLi.remove();
+            }
+          });
+      });
+
   	$("#datepicker").datepicker();
   	$("#datepicker").hide();
   	$("#forKeyup").hide();
