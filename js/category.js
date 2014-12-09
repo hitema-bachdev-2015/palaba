@@ -5,8 +5,8 @@ this.position = params.position;*/
 
 }
 
-Category.prototype.move=function(){
-	var content; 
+Category.prototype.displayCat=function(){
+    var content; 
     $.ajax({
 
         url: "ajax/affichage.php",
@@ -23,7 +23,9 @@ Category.prototype.move=function(){
           }
         }
       });
+}
 
+Category.prototype.moveCat=function(){
     $( "#sortable" ).sortable({
     	placeholder: "element_modif",
     	handle: ".titre",
@@ -44,6 +46,7 @@ Category.prototype.move=function(){
     });
     $( "#sortable" ).disableSelection();
 }
+
 Category.prototype.addTask=function(idCat){
 	//debugger;
 	$.ajax({
