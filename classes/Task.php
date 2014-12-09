@@ -9,11 +9,12 @@ class Task {
 	private $status;
 
 	function __construct($id, $id_category, $content, $date_end, $end_type, $status){
-		setId($id);
-		setContent($content);
-		setDateEnd($date_end);
-		setEndType($end_type);
-		setStatus($status);
+		$this->id = $i;
+		$this->id_category = $id_category;
+		$this->content = $content;
+		$this->date_end = $content;
+		$this->end_type = $date_end;
+		$this->status = $status;
 	}
 
 	public function setId($i){
@@ -61,6 +62,9 @@ class Task {
 	}
 
 	public function delete(){
-
+		global $dbh;
+		$sql = "DELETE FROM task WHERE this->id=id";
+		$query = $dbh->prepare($sql);
+		return $query->execute();
 	}
 }

@@ -24,9 +24,10 @@ else
 	define('_DB_PASSWORD_', '');
 }
 
-	include('includes/bdd.php');
-	include('classes/Category.php');
-	include('classes/Task.php');
+	require_once('includes/bdd.php');
+	require_once('classes/Category.php');
+	require_once('classes/Task.php');
+	require_once('classes/Tools');
 
 
 ?>
