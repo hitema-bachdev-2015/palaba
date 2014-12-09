@@ -64,11 +64,20 @@ $(document).ready(function() {
 			//alert(Content_Task+" "+Category_Task+" "+Date_Picker+" "+End_Type_Task);
 		});
   
-  	$("#btnDelete").click(function(event){
+  	$(".btnDelete").click(function(event){
   		event.preventDefault();
   		$(this).parent().hide();
-
-  		
+  		$.ajax({
+			url : 'ajax/script_delete.php',
+			type : 'POST',
+			data: {
+				ID : $(this).parent().attr('data-id')
+				},
+   			success : function(data){ // code_html contient le HTML renvoyé
+	   			alert(data);
+	   			$(this).parent().remove();
+   			}
+			});
   	});
 	
 });
