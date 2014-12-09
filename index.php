@@ -13,6 +13,9 @@
 		define('_DB_USERNAME_', 'root');
 		define('_DB_PASSWORD_', '');
 	}
+	include('includes/bdd.php');
+	include('classes/Category.php');
+	include('classes/Task.php');
 ?>
 <html>
 <head>
@@ -27,12 +30,12 @@
 </head>
 <body>
 
-<?php include('includes/add-task.php'); ?>
+<?php	
+	include('includes/add-task.php');
+	include('includes/content.php'); 
+	include('includes/add-category.php'); ?>
 
-<?php include('includes/content.php'); ?>
 
-<?php include('includes/add-category.php'); ?>
-
-<?php include('includes/footer.php'); ?>
 </body>
+<?php include('includes/footer.php'); ?>
 </html>
