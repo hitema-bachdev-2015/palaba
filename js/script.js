@@ -1,9 +1,9 @@
 //datepicker
 $(document).ready(function() {
 	// Gestion deplacement categorie
-	category = new Category();
+	var category = new Category(3);
 	category.move();
-	debugger;
+/*	debugger;*/
   	category.addTask(2);
   	$("#datepicker").datepicker();
   	$("#datepicker").hide();
@@ -28,7 +28,6 @@ $(document).ready(function() {
 			}
 	});
   
-    $("#datepicker").datepicker();
     $("#add-task form input[type='submit']").on("click",function(event){
 			event.preventDefault();
 			var Content_Task=$("#add-task form input[name='content-task']").val();
