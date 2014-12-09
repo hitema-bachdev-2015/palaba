@@ -6,7 +6,12 @@ class Tools {
 
 	}
 	public function addCategory($name = null, $position = null){
-
+		
 	}
+
+	public static function isEmpty($field)
+    {
+        return ($field === '' || $field === null);
+    }
 
 }

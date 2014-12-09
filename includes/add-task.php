@@ -1,27 +1,20 @@
-<div id="blocAdd">
-	<div id="add">
-	<input type="text" id="inputTask" name="content-task" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter the new task here...">
-	<div id="blocParams">
-		<div id="selectCateg">
-			<select name="id-category">
-				<option value="0">Maison</option>
-				<option value="1">Travail</option>
-				<option value="2">Noel</option>
-			</select>
-		</div>
-		<div id="dateChoose">
-			<input type="text" id="datepicker" value="Choissiez la date">
-		</div>
-		<div id="type">
-			<select>
-				<option>Au plus tôt</option>
-				<option>Avant de mourir</option>
-			</select>
-		</div>
-		</div>
-		<div id="divButton">
-			<div id="button"><span>OK</span></div> 
-		</div>
-		</div>
-	
-</div>
+<header id="add-task">
+	<form action="#" method="POST">
+		<input type="text" name="content-task" placeholder="Enter the new task here...">
+		<select name="id-category-task">
+			<option value="0">Maison</option>
+			<option value="1">Travail</option>
+			<option value="2">Noel</option>
+		</select>
+		<input type="text" id="datepicker" name="date_end-task" placeholder="Choissiez la date...">
+		<select name="end_type-task">
+			<option value="1">Au plus tôt</option>
+			<option value="2">Date précise</option>
+			<option value="3">Avant de mourir</option>
+		</select>
+		<input type="submit" name="submit_add-task" value="OK"/>
+	</form>
+	<script type="text/javascript">
+		
+	</script>
+</header>
