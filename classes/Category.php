@@ -52,9 +52,8 @@ class Category {
     	$tasks[$i]['date_end'] = $reponse['date_end'];
     	$tasks[$i]['end_type'] = $reponse['end_type'];
     	$tasks[$i]['status'] = $reponse['status'];
+    	$task = new Task(tasks[$i]['id'], $tasks[$i]['category'], $tasks[$i]['content'], $tasks[$i]['date_end'], $tasks[$i]['end_type'], $tasks[$i]['status']);
     	$i++;
-    	$task = new Task($tasks[$i]);
-		}	
 	return $task;
 	}
 
