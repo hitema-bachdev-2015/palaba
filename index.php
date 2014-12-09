@@ -11,6 +11,10 @@ elseif(file_exists('/etc/sites/palaba/defines.inc.php'))
 {
 	require_once('/etc/sites/palaba/defines.inc.php');
 }
+elseif(file_exists('/Program Files (x86)/EasyPHP-12.1/defines.inc.php'))
+{
+	require_once('/Program Files (x86)/EasyPHP-12.1/defines.inc.php');
+}
 else
 {
 	define('_DB_HOST_', 'localhost');
