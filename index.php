@@ -1,4 +1,5 @@
 <?php
+
 if(file_exists('/wamp/www/PaLaBa/defines.inc.php'))
 {
 	require_once('/wamp/www/PaLaBa/defines.inc.php');
@@ -22,7 +23,14 @@ else
 	define('_DB_USERNAME_', 'root');
 	define('_DB_PASSWORD_', '');
 }
+
+	include('includes/bdd.php');
+	include('classes/Category.php');
+	include('classes/Task.php');
+
+
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,9 +52,12 @@ else
 	<?php include('includes/add-task.php'); ?>
 
 	<?php include('includes/content.php'); ?>
-
+	
 	<?php include('includes/add-category.php'); ?>
 
 	<?php include('includes/footer.php'); ?>
+
+
 </body>
+<?php include('includes/footer.php'); ?>
 </html>
