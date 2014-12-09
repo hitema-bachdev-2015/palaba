@@ -28,6 +28,8 @@
 <body>
 	<?php include('includes/add-task.php'); ?>
 
+	<?php include('ajax/showTasks.php'); ?>
+
 	<?php include('includes/content.php'); ?>
 	
 	<?php include('includes/add-category.php'); ?>
