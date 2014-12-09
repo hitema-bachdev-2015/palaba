@@ -2,14 +2,14 @@
 <html>
     <head>
         <script type="text/javascript" src="lib/jquery-1.10.1.min"> </script>
-        <script type="text/javascript" src="script.js"> </script>
+        <script type="text/javascript" src="../../script.js"> </script>
         <meta charset="utf-8" />
         <title>Titre</title>
     </head>
 
     <body>
         <div id="add-category"> 
-            
+
             <a class="fancybox" rel="nofollow" href="#">
                 Ajouter
             </a>
