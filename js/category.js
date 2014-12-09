@@ -45,7 +45,7 @@ Category.prototype.move=function(){
     $( "#sortable" ).disableSelection();
 }
 Category.prototype.addTask=function(idCat){
-	debugger;
+	//debugger;
 	$.ajax({
 				url : 'ajax/showTasks.php',
 				type : 'POST',

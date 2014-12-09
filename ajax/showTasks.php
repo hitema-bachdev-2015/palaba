@@ -1,14 +1,17 @@
 
 <?php
-$chat = new Category(3);
-$visuChat =$chat->getAllTasks(3);
-$testchat = $visuChat->getId();
+require("../includes/bdd.php");
+require("../classes/Task.php");
+require("../classes/Category.php");
+$chat = new Category($_POST['IDCAT']);
+$visuChat = $chat->getAllTasks($_POST['IDCAT']);
 
-$d_html="";
-$d_html .= "
-<ul>
-	<li>
-		$testchat<input type=\"image\" class=\"btnDelete\" src=\"1418052398_trash-can-delete.png\" />
-	</li>
-<ul>";
+echo "<ul>";
+foreach($visuChat as $value)
+{
+	echo "<li data-id='".$value->getId()."' >".
+	$value->getContent()."<input type=\"image\" class=\"btnDelete\" src=\"1418052398_trash-can-delete.png\" />
+	</li>";
+}
+echo"</ul>";
 ?>

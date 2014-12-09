@@ -1,8 +1,8 @@
 <ul id="list-category">
 	<li class="title-category" data-id="1">
-		<header>Maison</header>
-		<article>Acheter une baguete</article>
-		<article>Acheter une maison</article>
+		<ul>
+			<li data-id="1" >Acheter une baguette</li>
+		</ul>
 	</li>
 </ul>
 <ul id="list-category">
