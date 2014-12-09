@@ -7,7 +7,6 @@ class Category {
 	function __construct($id = null, $name) {
 		$this->id = $id;
 		$this->name = $name;
-		$this->position = $position;
 	}
 
 
