@@ -38,7 +38,7 @@ class Category {
 
 
 	public function getAllTasks($id){
-		$query = "SELECT * FROM task WHERE id = '$id'";
+		$query = "SELECT * FROM task WHERE id = '$id' ORDER BY end_type, date_end ASC";
 
 	$sth = $dbh->prepare($query);
 	$reponse = $sth->execute();
