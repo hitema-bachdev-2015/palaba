@@ -10,6 +10,7 @@ var Task=function(params){
 }
 
 function addTask(params){
+	alert(params);
 	//Mise de l'id de l'element+1 à ajouter, dans une variable
 	var id=params.last_id;
 	//Mise de l'id de la catégorie ou se trouve la tache dans une variable
