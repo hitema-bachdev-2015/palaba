@@ -67,6 +67,7 @@ $(document).ready(function() {
   	$(".btnDelete").click(function(event){
   		event.preventDefault();
   		$(this).parent().hide();
+  		console.log($(this).parent().attr('data-id_tast'));
   		$.ajax({
 			url : 'ajax/script_delete.php',
 			type : 'POST',
