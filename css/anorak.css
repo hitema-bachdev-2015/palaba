@@ -2,8 +2,58 @@ html, body{
 	height: 100%;
 	background: #f7f6f2;
 }
+#control{
+	width:100%;
+	height:60px;
+	background: #e0602f;
+}
 .wrap{
 	margin:0 auto;
+}
+header .wrap{
+	width:1080px;
+}
+header#control span.tab{
+	height:40px;
+	margin-top: 10px;
+	display: block;
+	padding: 0 10px;
+	margin-left: 20px;
+	float: left;
+	line-height: 40px;
+	color: #fff;
+	font-weight: bold;
+}
+header#control span.tab.active{
+	background: #f56d3b;
+}
+header#control span#logo{
+	display: block;
+	float:left;
+	width:300px;
+	height: 60px;
+	background: url('../img/logo.png') center center no-repeat;
+	background-size: 40%;
+}
+header#control a.profil{
+	float: right;
+	margin-top: 1px
+}
+header#control a.profil img{
+	width:50px;
+	height: 50px;
+	border-radius:50px;
+	overflow: hidden;
+	margin-right: 20px;
+	border:4px solid #fff;
+}
+header#control a.profil .name{
+float: right;
+height: 50px;
+line-height: 50px;
+color: #fff;
+font-weight: bold;	
+margin-right: 20px;
 }
 .content.wrap{
 	margin-top:0;
@@ -17,6 +67,17 @@ html, body{
 	color:#fff;
 	float: left;
 }
+#coloumn-left .filter-date{
+	overflow: hidden;
+	padding-top: 20px;
+} 
+#coloumn-left .filter-category span.title{
+	margin-left:14px;
+	margin-top: 40px;
+	margin-bottom: 20px;
+	font-size: 20px;
+	display: block;
+}
 #coloumn-left h2 a{
 	text-decoration: none;
 	color:#fff;
@@ -27,11 +88,16 @@ html, body{
 }
 #coloumn-left h2{
 	background:#1e1e1e;
-	width:90%;
+	width:252px;
 	min-height: 50px;
 	margin:10px auto;
 	text-align: center;
 	text-transform: uppercase;
+}
+#coloumn-left h2.small{
+	float:left;
+	width:114px;
+	margin-left:24px;
 }
 #coloumn-left h2:hover{
 	background:#f56d3b;
@@ -52,6 +118,8 @@ html, body{
 }
 #coloumn-right #contener h1{
 	background:#fff;
+	text-transform: uppercase;
+	font-weight: 100;
 }
 #coloumn-right #contener ul#sortable{
 	width: 780px;
@@ -60,6 +128,8 @@ html, body{
 	margin: 0 30px;
 	border: none;
 	border-radius:0;
+	min-height: 60px;
+	height: inherit;
 }
 #coloumn-right #contener ul#sortable > li:nth-child(1),
 #coloumn-right #contener ul#sortable > li:nth-child(3),
@@ -72,10 +142,10 @@ html, body{
 }
 
 #coloumn-right #contener ul#sortable header.titre{
-	height:40px;
+	height:50px;
 	background:#353535;
 	padding: 0;
-	line-height: 40px;
+	line-height: 50px;
 	text-transform: uppercase;
 	font-size: 18px;
 }
@@ -83,10 +153,10 @@ html, body{
 #coloumn-right #contener ul#sortable header.titre i{
 	top:0;
 	right:0;
-	width:40px;
-	height:40px;
+	width:50px;
+	height:50px;
 	border-radius:0;
-	line-height: 40px;
+	line-height: 50px;
 	background: #ce4733;
 }
 
@@ -105,7 +175,7 @@ html, body{
 #coloumn-right #contener ul#sortable li ul li i{
 	display:none;
 	height:40px;
-	width:40px;	
+	width:50px;	
 	line-height: 40px;
 	text-align: center;
 }
