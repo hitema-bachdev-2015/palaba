@@ -74,7 +74,7 @@ $(document).ready(function() {
 				ID : $(this).parent().attr('data-id_tast')
 				},
    			success : function(data){ // code_html contient le HTML renvoyé
-	   			alert("Tâche supprimée");
+	   			console.log("Tâche supprimé");
 	   			$(this).parent().remove();
    			}
 			});
