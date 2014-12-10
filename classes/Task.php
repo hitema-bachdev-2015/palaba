@@ -12,10 +12,6 @@ class Task {
 		$this->id = $id;
 	}
 
-	public function setId($i){
-		$this->id = $i;
-	}
-
 	public function setContent($c){
 		$this->content = $c;
 	}
