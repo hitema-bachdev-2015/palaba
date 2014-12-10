@@ -1,8 +1,8 @@
 //datepicker
 $(document).ready(function() {
 	// Gestion deplacement categorie
-	//var category = new Category({id : 3});
-   // category.moveCat();
+	var category = new Category({id : 3});
+   category.moveCat();
       //category.addTask(1);
     $("#sortable > li > header >i").on('click', function(event){
           var myId = event.currentTarget.attributes[0].value;
