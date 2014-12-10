@@ -4,8 +4,12 @@
 </div>
 
 <div id="toto" style="display:none;">
+	<h2>Add Category</h2>
     <form method="post" action="">
-        <input type="text" name="add-category-name" placeholder="Entrer un nom de catégorie">
+    	<label>
+    		<span>Name :</span>
+    		<input type="text" name="add-category-name" placeholder="Entrer un nom de catégorie">
+    	</label>
         <input type="submit" value="OK">
     </form>
 </div>
