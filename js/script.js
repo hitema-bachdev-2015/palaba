@@ -64,46 +64,58 @@ $(document).ready(function() {
    			});
 			//alert(Content_Task+" "+Category_Task+" "+Date_Picker+" "+End_Type_Task);
 		});
-    
+       
     /***DELETE TASK****/
     var id_to_delete;
     var li_to_delete;
+    $("#sortable > li > ul > li").mouseover(function(event){
+        event.preventDefault();
+        $(this).children().css("display","block");
+    });
+    $("#sortable > li > ul > li").mouseout(function(event){
+        event.preventDefault();
+       // console.log($(this).children());
+       $(this).children().css("display","none");
+    });
     $(".btnDelete").click(function(event){
-    	event.preventDefault();
-    	id_to_delete= $(this).parent().attr('data-id_task');
-    	li_to_delete = $(this).parent();
-    	$.fancybox(
-    		$('#confirm_delete').html(),
-    		{
-    			'width'             : 950,
-    			'height'            : 1100,
-    			'autoScale'         : false,
-    			'transitionIn'      : 'none',
-    			'transitionOut'     : 'none',
-    			'hideOnContentClick': false,
-    		} 
-    		);	
-    });	
+        event.preventDefault();
+        id_to_delete= $(this).parent().attr('data-id_task');
+        li_to_delete = $(this).parent();
+        $.fancybox(
+            $('#confirm_delete').html(function(){
+                $('#textAdded_confirm_delete').text(li_to_delete.text());             
+            }),
+            {
+                // 'width'             : 950,
+                // 'height'            : 1100,
+                // 'autoScale'         : false,
+                // 'transitionIn'      : 'none',
+                // 'transitionOut'     : 'none',
+                // 'hideOnContentClick': false,
+            }); 
+    }); 
     $(document).on("click","#confirmDelete",function(event) {
-    	event.preventDefault();
-    	var that = $(this);
-    	$.ajax({
-    		url : './ajax/delTask.php',
-    		type : "POST",
-    		cache	: false,
-    		data: {ID :id_to_delete},
-    		success : function(data){
-    			li_to_delete.remove();
-    			$.fancybox.close();
-    		}
-    	});
+        event.preventDefault();
+        var that = $(this);
+        $.ajax({
+            url : './ajax/delTask.php',
+            type : "POST",
+            cache   : false,
+            data: {ID :id_to_delete},
+            success : function(data){
+                li_to_delete.remove();
+                $.fancybox.close();
+            }
+        });
     });
 
     $(document).on("click","#noConfirmDelete",function(event) {
-    	event.preventDefault();
-    	$.fancybox.close();
+        event.preventDefault();
+        $.fancybox.close();
+        $(".btnDelete").css("display", "none");
     });
     /****/
+    
     $("a.add-cat").click(function () {
     	$.fancybox(
     		$('#toto').html(),
