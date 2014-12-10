@@ -67,6 +67,7 @@ $(document).ready(function() {
   	$(".btnDelete").click(function(event){
   		event.preventDefault();
   		$(this).parent().hide();
+  		console.log($(this).parent().attr('data-id_tast'));
   		$.ajax({
 			url : 'ajax/script_delete.php',
 			type : 'POST',
@@ -74,7 +75,7 @@ $(document).ready(function() {
 				ID : $(this).parent().attr('data-id_tast')
 				},
    			success : function(data){ // code_html contient le HTML renvoyé
-	   			alert("Tâche supprimée");
+	   			console.log("Tâche supprimé");
 	   			$(this).parent().remove();
    			}
 			});
