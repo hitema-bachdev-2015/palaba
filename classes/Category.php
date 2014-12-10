@@ -27,6 +27,21 @@ class Category {
 		return $reponse;
 		
 	}
+
+	public function supCat (){
+		global $dbh;
+		$sql1 = "DELETE FROM category WHERE id=:id";
+		$query1 = $dbh->prepare($sql1);
+		$query1->execute(
+					array(	'id' => $this->id )
+					);
+
+		$sql2 = "DELETE FROM task WHERE id_category=:id";
+		$query2 = $dbh->prepare($sql2);
+		$query2->execute(
+					array(	'id' => $this->id )
+					);
+	}
 	public function getAllTasks($id){
 		global $dbh;
 		$query = "SELECT * FROM task WHERE id_category = '$id' ORDER BY end_type, date_end ASC";
