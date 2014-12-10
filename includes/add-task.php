@@ -22,4 +22,5 @@
 			</select>
 			<input type="submit" name="submit_add-task" value="OK"/>
 		</div>
+	</form>
 </header>
