@@ -55,7 +55,9 @@ class Task {
 		global $dbh;
 		$query= "SELECT * FROM task Where id = :id";
 		$sth = $dbh->prepare($query);
-		$sth->execute(array('id'=> $this->id));
+		$sth->execute(array(
+			'id'=> $this->id
+		));
 		$reponse = $sth->Fetch();
 		
 		$this->content = $reponse["content"];
@@ -70,11 +72,9 @@ class Task {
 		global $dbh;
 		$req = "SELECT * FROM task WHERE id=:id";
 		$query = $dbh->prepare($req);
-		$query->execute(
-				array(
-						'id' => $this->id
-					)
-			);
+		$query->execute(array(
+			'id' => $this->id
+		));
 		$reponse = $query->fetch();
 		echo json_encode($reponse);
 	}
@@ -82,19 +82,17 @@ class Task {
 	public function updateTask(){
 		global $dbh;
 		$req = "UPDATE task SET content = :content,
-								end_type = :end_type, 
-								date_end = :date_end WHERE id= :id";
+		end_type = :end_type, 
+		date_end = :date_end WHERE id= :id";
 
 		$query = $dbh->prepare($req);
-		$query->execute(
-				array(
-						'id' => $this->id,
-						'content' => $this->content,
-						'end_type' => $this->end_type,
-						'date_end' => $this->date_end
-					)
-			);
-	
+		$query->execute(array(
+			'id' => $this->id,
+			'content' => $this->content,
+			'end_type' => $this->end_type,
+			'date_end' => $this->date_end
+		));
+		
 	}
 
 	public function delete(){
@@ -102,7 +100,7 @@ class Task {
 		$sql = "DELETE FROM todolist.task WHERE task.id = :id";
 		$query = $dbh->prepare($sql);
 		$query->execute(array(
-				':id' => $this->id
-			));
+			':id' => $this->id
+		));
 	}
 }

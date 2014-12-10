@@ -1,35 +1,32 @@
 @font-face {
-    font-family: 'Roboto';
-    src: url(../fonts/Roboto-Regular.ttf);
+	font-family: 'Roboto';
+	src: url(../fonts/Roboto-Regular.ttf);
 }
 
-*
-{
+* {
 	font-family: 'Roboto', sans-serif;
 }
 
-body
-{
+body {
 	margin: 0;
 	padding: 0;
 	background: #fafafa;
 	font-family: 'Roboto', sans-serif;
 }
-a
-{
+
+a {
 	text-decoration: none;
 }
-h1 
-{
+
+h1 {
 	padding: 15px;
 	text-align: center;
 	font-size: 25px;
 	font-weight: 700;
 }
 
-
 /* ADD TASK */
-#add-task{
+#add-task {
 	min-width: 800px;
 	width: 100%;
 	background:#4183D7;
@@ -38,20 +35,20 @@ h1
 	border-bottom: 4px solid #2C3E50;
 }
 
-#add-task form{
+#add-task form {
 	width: 730px;
 	display: block;
 	margin: 0 auto;
 }
 
-#add-task form input[name="content-task"]{
+#add-task form input[name="content-task"] {
 	width:710px;
 	height:20px;
 	padding: 10px;
 	border: none;
 }
 
-#add-task form input[name="date_end-task"]{
+#add-task form input[name="date_end-task"] {
 	width:190px;
 	height:20px;
 	padding: 10px;
@@ -63,21 +60,24 @@ h1
 }
 
 #add-task form input[name="date_end-task"]::-webkit-input-placeholder { /* WebKit browsers */
-    color:    #000;
-}
-#add-task form input[name="date_end-task"]:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-   color:    #000;
-   opacity:  1;
-}
-#add-task form input[name="date_end-task"]::-moz-placeholder { /* Mozilla Firefox 19+ */
-   color:    #000;
-   opacity:  1;
-}
-#add-task form input[name="date_end-task"]:-ms-input-placeholder { /* Internet Explorer 10+ */
-   color:    #000;
+	color:    #000;
 }
 
-#add-task form select{
+#add-task form input[name="date_end-task"]:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	color:    #000;
+	opacity:  1;
+}
+
+#add-task form input[name="date_end-task"]::-moz-placeholder { /* Mozilla Firefox 19+ */
+	color:    #000;
+	opacity:  1;
+}
+
+#add-task form input[name="date_end-task"]:-ms-input-placeholder { /* Internet Explorer 10+ */
+	color:    #000;
+}
+
+#add-task form select {
 	background:#6BB9F0;
 	border:none;
 	width:210px;
@@ -85,8 +85,7 @@ h1
 	height:40px;
 }
 
-#add-task form input[type="submit"]
-{
+#add-task form input[type="submit"] {
 	display: block;
 	float:right;
 	width:100px;
@@ -96,9 +95,7 @@ h1
 	color: #fff;
 }
 
-
-div.add-cat
-{
+div.add-cat {
 	width: 60px;
 	height: 60px;
 	border-radius: 50%;
@@ -108,16 +105,24 @@ div.add-cat
 	top: 6px;
 	right: 30px;
 }
-div.add-cat .fancybox 
-{
+
+div.add-cat .fancybox {
 	display: block;
 	font-size: 50px;
 	text-align: center;
 	color: #fff;
 	line-height: 56px;
 }
-.fancybox-inner > h2
-{	
+
+#task-complete {
+	width: 200px;
+	height: 30px;
+	border: 1px solid black;
+}
+
+/* FANCYBOX */
+
+.fancybox-inner > h2 {	
 	display: inline-block;
 	width: 300px;
 	text-align: center;
@@ -126,24 +131,24 @@ div.add-cat .fancybox
 	color: rgb(65, 131, 215);
 	margin: 0 auto 10px;
 }
-.fancybox-inner > label
-{
+
+.fancybox-inner > label {
 	display: block;
 	line-height: 25px;
 }
-.fancybox-inner > label > span
-{
+
+.fancybox-inner > label > span {
 	display: block;
 	text-align: center;
 }
-.fancybox-inner > label > input
-{
+
+.fancybox-inner > label > input {
 	display: inline-block;
 	width: 300px;
 	margin: 0 auto
 }
-.fancybox-inner > input[type="submit"]
-{
+
+.fancybox-inner > input[type="submit"] {
 	display: block;
 	text-align: center;
 	width: 90px;
@@ -155,17 +160,14 @@ div.add-cat .fancybox
 	color: #fff;
 	cursor: pointer;
 }
+
 .fancybox-inner > input[type="submit"]:hover,
-.fancybox-inner > input[type="submit"]:active
-{
+.fancybox-inner > input[type="submit"]:active {
 	background: rgb(12, 99, 211);
 }
 
-
-
-
 /* FOOTER */
-footer{
+footer {
 	border-top:4px solid #22313F;
 	width:100%;
 	min-width: 800px;
@@ -176,22 +178,20 @@ footer{
 }
 
 /* CONTENT */
-#contener
-{
+#contener {
 	width: 980px;
 	margin: 0 auto;
 	position: relative;
 	min-height: 650px;
 }
+
 /* CATEGORY */
-#sortable 
-{
+#sortable {
 	width:980px;
 	margin:20px auto
 }
 
-#sortable > li 
-{
+#sortable > li {
 	width: 300px;
 	display: inline-block;
 	margin: 0 10px;
@@ -202,8 +202,7 @@ footer{
 	border-radius: 5px;
 }
 
-#sortable > li > header 
-{
+#sortable > li > header {
 	background: rgb(65, 131, 215);
 	padding: 15px;
 	position: relative;
@@ -213,13 +212,11 @@ footer{
 	cursor: pointer;
 }
 
-#sortable > li > .titre > h2
-{
+#sortable > li > .titre > h2 {
 	display: inline-block;
 }
 
-#sortable > li > header > i 
-{
+#sortable > li > header > i {
 	position: absolute;
 	right: 15px;
 	top: 20px;
@@ -232,14 +229,11 @@ footer{
 	font-weight: 700;
 }
 
-#sortable > li > ul > li > i 
-{
+#sortable > li > ul > li > i {
 	float: right;
 }
 
-/* 	TASK  */
-#sortable > li > ul > li
-{
+#sortable > li > ul > li {
 	background: rgb(235, 235, 235);
 	padding: 7px;
 	border-bottom: 1px solid #bbb;

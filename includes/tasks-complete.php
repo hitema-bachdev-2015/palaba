@@ -1,10 +1,6 @@
 <div id="task-complete"> 
 	Mark All Tasks Complete
 </div>
-<?php
-	
-?>
-
 <style>
 #task-complete{
 	width: 200px;

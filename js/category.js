@@ -15,7 +15,7 @@ Category.prototype.moveCat=function(){
           var myId = $(this).attr('data-id_cat');
     		 	var myIndex = $(this).index();
 		    	$.ajax({
-				  url: "ajax/move.php",
+				  url: "ajax/moveCat.php",
 				  type: "POST",
 				  data: { id_cat: myId, index: myIndex }
 
@@ -29,7 +29,7 @@ Category.prototype.moveCat=function(){
 Category.prototype.addTask=function(idCat){
 	//debugger;
 	$.ajax({
-				url : 'ajax/showTasks.php',
+				url : 'ajax/showTask.php',
 				type : 'POST',
 				data: {
 						IDCAT:idCat,

@@ -12,19 +12,19 @@
     	</label>
         <input type="submit" class='btnSubmitCat' name ="ok" value="OK">
         <?php
-       		global $dbh;
-        	if (isset($_POST['nom'])) {
-                $sql = "INSERT INTO category (name, position) VALUES (:nom, :pos)";
-                $query = $dbh -> prepare($sql);
+        global $dbh;
+        if (isset($_POST['nom'])) {
+            $sql = "INSERT INTO category (name, position) VALUES (:nom, :pos)";
+            $query = $dbh -> prepare($sql);
 
-                $position = 0;
-   
-                $query -> execute(array(
-                    ":nom" => $_POST['nom'],
-                    ":pos" => $position
-                    ));
-            }
-        	
+            $position = 0;
+
+            $query -> execute(array(
+                ":nom" => $_POST['nom'],
+                ":pos" => $position
+            ));
+        }
+
         ?>
     </form>
 </div>

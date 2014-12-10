@@ -1,9 +1,8 @@
-
 <?php
-	require_once('includes/bdd.php');
-	require_once('classes/Task.php');
-	require_once('classes/Category.php');
-	require_once('classes/Tools.php');
+require_once('includes/bdd.php');
+require_once('classes/Task.php');
+require_once('classes/Category.php');
+require_once('classes/Tools.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -40,9 +39,7 @@
 		<?php include('includes/content.php'); ?>
 		
 		<?php include('includes/add-category.php'); ?>
-		<?php include('includes/confirm-delete.php'); ?>
 	</div>
-	<?php include('includes/tasks-complete.php'); ?>
 	<?php include('includes/footer.php'); ?>
 
 </body>

@@ -1,6 +1,6 @@
 <header id="add-task">
 	<form action="#" method="get">
-			<input id="cont-task" type="text" name="content-task" placeholder="Enter the new task here..."> 
+		<input id="cont-task" type="text" name="content-task" placeholder="Enter the new task here..."> 
 		<div id="forKeyup">
 			<select name="id-category-task">
 				<?php
@@ -8,9 +8,9 @@
 				$sth = $dbh->prepare($query);
 				$sth->execute();
 				while ($row = $sth->fetch()) {
-				?>
-				<option value="<?=$row["id"]?>"><?= $row["name"]?></option>
-				<?php
+					?>
+					<option value="<?=$row["id"]?>"><?= $row["name"]?></option>
+					<?php
 				}
 				?>
 			</select>
