@@ -1,3 +1,4 @@
+
 <?php
 	require_once('includes/bdd.php');
 	require_once('classes/Task.php');
@@ -32,12 +33,17 @@
 	<script type="text/javascript" src="js/fancybox/helpers/jquery.fancybox-media.js"></script>
 	<script type="text/javascript" src="js/fancybox/helpers/jquery.fancybox-thumbs.js"></script>
 </head>
-<body>
-	<?php 
+<body>	
+	<?php include('includes/add-task.php'); ?>
 
+	<div id="contener">
+		<h1>Gestionnaire de tache</h1>
+		<?php include('includes/content.php'); ?>
+		
+		<?php include('includes/add-category.php'); ?>
+	</div>
 
-		include('includes/footer.php');
-	?>
+	<?php include('includes/footer.php'); ?>
 <script>
 $(document).ready(function(){
 	$("a.add-cat").click(function () {

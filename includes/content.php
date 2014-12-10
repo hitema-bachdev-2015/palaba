@@ -1,4 +1,5 @@
 <?php 
+      // affichage des categorie
       $sql = "SELECT * FROM category ORDER BY position";
       $query = $dbh->prepare($sql);
       $query->execute();
