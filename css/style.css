@@ -92,7 +92,7 @@ h1
 }
 
 
-#add-category
+div.add-cat
 {
 	width: 60px;
 	height: 60px;
@@ -103,7 +103,7 @@ h1
 	top: 6px;
 	right: 30px;
 }
-#add-category .fancybox 
+div.add-cat .fancybox 
 {
 	display: block;
 	font-size: 50px;
