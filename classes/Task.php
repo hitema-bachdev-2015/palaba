@@ -99,7 +99,7 @@ class Task {
 
 	public function delete(){
 		global $dbh;
-		$sql = "DELETE FROM task WHERE id = :id";
+		$sql = "DELETE FROM todolist.task WHERE task.id = :id";
 		$query = $dbh->prepare($sql);
 		$query->execute(array(
 				':id' => $this->id

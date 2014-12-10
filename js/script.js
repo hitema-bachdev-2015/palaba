@@ -64,23 +64,46 @@ $(document).ready(function() {
 			//alert(Content_Task+" "+Category_Task+" "+Date_Picker+" "+End_Type_Task);
 		});
   
+  	/***DELETE TASK****/
+  	var id_to_delete;
+  	var li_to_delete;
   	$(".btnDelete").click(function(event){
   		event.preventDefault();
-  		$(this).parent().hide();
-  		console.log($(this).parent().attr('data-id_tast'));
-  		$.ajax({
-			url : 'ajax/script_delete.php',
-			type : 'POST',
-			data: {
-				ID : $(this).parent().attr('data-id_tast')
-				},
-   			success : function(data){ // code_html contient le HTML renvoyé
-	   			console.log("Tâche supprimé");
-	   			$(this).parent().remove();
-   			}
-			});
-  	});
-	
+  		id_to_delete= $(this).parent().attr('data-id_task');
+  		li_to_delete = $(this).parent();
+  		$.fancybox(
+                $('#confirm_delete').html(),
+                {
+                    'width'             : 950,
+                    'height'            : 1100,
+                    'autoScale'         : false,
+                    'transitionIn'      : 'none',
+                    'transitionOut'     : 'none',
+                    'hideOnContentClick': false,
+                 } 
+            );	
+	});	
+	$(document).on("click","#confirmDelete",function(event) {
+  		event.preventDefault();
+		var that = $(this);
+
+		$.ajax({
+			url : './ajax/script_delete.php',
+			type : "POST",
+			cache	: false,
+			data: {ID :id_to_delete},
+			success : function(data){
+				li_to_delete.remove();
+				$.fancybox.close();
+			}
+		});
+	});
+
+	$(document).on("click","#noConfirmDelete",function(event) {
+  		event.preventDefault();
+		$.fancybox.close();
+	});
+	/****/
 	$("a.add-cat").click(function () {
         $.fancybox(
                 $('#toto').html(),

@@ -12,7 +12,8 @@
                 <ul>"; 
                 foreach($cat->getTasks() as $task){
 					$task->hydrate();
-					echo "<li> ".$task->getContent()."<i class='fa fa-trash btnDelete'></i></li>";
+
+					echo "<li data-id_task ='".$task->getId()."''> ".$task->getContent()." <i class='fa fa-trash btnDelete' style='float: right;'></i></li>";
                 }
 
     	echo "
