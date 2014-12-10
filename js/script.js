@@ -57,7 +57,7 @@ $(document).ready(function() {
 						END_TYPE_TASK:End_Type_Task,
 					},
        			success : function(data){ // code_html contient le HTML renvoyé
-       			alert(data);
+       			console.log(data);
 
        			}
    			});
