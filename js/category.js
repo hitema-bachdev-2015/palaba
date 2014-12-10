@@ -12,8 +12,7 @@ Category.prototype.moveCat=function(){
     	revert: true,
     	update: function(){
     		 $(" #sortable li").each(function(){
-          console.log($(this));
-    		 	var myId = $(this)[0].attributes[0].value;
+          var myId = $(this).attr('data-id_cat');
     		 	var myIndex = $(this).index();
 		    	$.ajax({
 				  url: "ajax/move.php",
