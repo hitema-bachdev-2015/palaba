@@ -176,6 +176,7 @@ footer{
 	width: 980px;
 	margin: 0 auto;
 	position: relative;
+	min-height: 650px;
 }
 /* CATEGORY */
 #sortable 
