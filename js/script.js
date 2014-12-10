@@ -1,9 +1,9 @@
 //datepicker
 $(document).ready(function() {
 	// Gestion deplacement categorie
-	    var category = new Category({id : 3});
-    category.moveCat();
-      category.addTask(1);
+	//var category = new Category({id : 3});
+   // category.moveCat();
+      //category.addTask(1);
     $("#sortable > li > header >i").on('click', function(event){
           var myId = event.currentTarget.attributes[0].value;
           var myLi = event.currentTarget.parentNode.parentNode;
@@ -57,8 +57,8 @@ $(document).ready(function() {
 						END_TYPE_TASK:End_Type_Task,
 					},
        			success : function(data){ // code_html contient le HTML renvoyé
-       			console.log(data);
-
+					//alert(data);
+					addTask(data);
        			}
    			});
 			//alert(Content_Task+" "+Category_Task+" "+Date_Picker+" "+End_Type_Task);
@@ -67,6 +67,7 @@ $(document).ready(function() {
   	$(".btnDelete").click(function(event){
   		event.preventDefault();
   		$(this).parent().hide();
+  		console.log($(this).parent().attr('data-id_tast'));
   		$.ajax({
 			url : 'ajax/script_delete.php',
 			type : 'POST',
@@ -74,10 +75,27 @@ $(document).ready(function() {
 				ID : $(this).parent().attr('data-id_tast')
 				},
    			success : function(data){ // code_html contient le HTML renvoyé
-	   			alert("Tâche supprimée");
+	   			console.log("Tâche supprimé");
 	   			$(this).parent().remove();
    			}
 			});
   	});
 	
+	$("a.add-cat").click(function () {
+		console.log("a");
+        $.fancybox(
+                $('#toto').html(),
+                {
+                    'width'             : 950,
+                    'height'            : 1100,
+                    'autoScale'         : false,
+                    'transitionIn'      : 'none',
+                    'transitionOut'     : 'none',
+                    'hideOnContentClick': false,
+                    'onStart': function () {
+                      //On Start callback if needed  
+                    }
+                 }
+            );
+    });
 });
