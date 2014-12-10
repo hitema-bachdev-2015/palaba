@@ -8,8 +8,8 @@ this.position = params.position;*/
 Category.prototype.moveCat=function(){
     $( "#sortable" ).sortable({
     	placeholder: "element_modif",
-    	handle: ".titre",
-    	revert: true,
+    	handle: ".moveCat",
+    	// revert: true,
     	update: function(){
     		 $(" #sortable li").each(function(){
           var myId = $(this).attr('data-id_cat');

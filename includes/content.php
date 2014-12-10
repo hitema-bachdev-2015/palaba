@@ -5,6 +5,7 @@
 
     echo "<li data-id_cat='".$cat->getId()."'>
     <header class='titre'>
+    <i class='fa fa-bars moveCat'></i>
     <h2>".$cat->getName()."</h2>
     <i data-id_cat='".$cat->getId()."'>x</i>
     </header>
