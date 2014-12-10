@@ -12,7 +12,7 @@
 				<option value="<?=$row["id"]?>"><?= $row["name"]?></option>
 				<?php
 				}
-			?>
+				?>
 			</select>
 			<input type="text" id="datepicker" name="date_end-task" placeholder="Choissiez la date...">
 			<select name="end_type-task" id="end_select">
