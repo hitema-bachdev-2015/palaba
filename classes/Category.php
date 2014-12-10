@@ -53,15 +53,12 @@ class Category {
 			$task = new Task($taskResult["id"]);
 			$tasks[] = $task;
 	    }
-
+		
 		if (!empty($tasks)) {
 			$this->tasks = $tasks;
 			$this->hydrated = true;
 		}	
-
 	}
-
-
 	public function reorganisation ($position){
 		global $dbh;
 		$sql = "UPDATE category SET position = :position WHERE id=:id";
