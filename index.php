@@ -18,6 +18,7 @@ require_once('classes/Tools.php');
 	<link rel="stylesheet" href="css/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="css/fancybox/helpers/jquery.fancybox-buttons.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="css/fancybox/helpers/jquery.fancybox-thumbs.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/anorak.css" type="text/css" media="screen" />
 	<!-- JAVASCRIPT -->
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
@@ -30,6 +31,7 @@ require_once('classes/Tools.php');
 	<script type="text/javascript" src="js/fancybox/helpers/jquery.fancybox-buttons.js"></script>
 	<script type="text/javascript" src="js/fancybox/helpers/jquery.fancybox-media.js"></script>
 	<script type="text/javascript" src="js/fancybox/helpers/jquery.fancybox-thumbs.js"></script>
+	<script type="text/javascript" src="js/anorak.js"></script>
 </head>
 <body>	
 	<?php include('includes/add-task.php'); ?>
