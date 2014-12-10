@@ -47,7 +47,7 @@ $(document).ready(function() {
 			var Date_Picker=$("#datepicker").val();
 			var End_Type_Task=$("#add-task form select[name='end_type-task']").val();
 			$.ajax({
-				url : 'ajax/script-addtask.php',
+				url : 'ajax/addTask.php',
 				type : 'POST',
 				data: {
 						CONTENT:Content_Task,
