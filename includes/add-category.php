@@ -8,7 +8,7 @@
     <form method="post" action="">
     	<label>
     		<span>Name :</span>
-    		<input type="text" name="add-category-name" placeholder="Entrer un nom de catégorie"> <br>
+    		<input type="text" name="add-category-name"  placeholder="Entrer un nom de catégorie" required=""> <br>
     		<span>Position :</span>
     		<select name="add-category-position">
     			<?php

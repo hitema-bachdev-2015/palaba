@@ -81,4 +81,21 @@ $(document).ready(function() {
 			});
   	});
 	
+	$("a.add-cat").click(function () {
+		console.log("a");
+        $.fancybox(
+                $('#toto').html(),
+                {
+                    'width'             : 950,
+                    'height'            : 1100,
+                    'autoScale'         : false,
+                    'transitionIn'      : 'none',
+                    'transitionOut'     : 'none',
+                    'hideOnContentClick': false,
+                    'onStart': function () {
+                      //On Start callback if needed  
+                    }
+                 }
+            );
+    });
 });
