@@ -62,4 +62,12 @@ class Tools {
 
     }
 
+    public static function completeAllTasks()
+    {
+    	global $dbh;
+    	$sql = "UPDATE tasks SET status = 2 WHERE 1";
+    	$query = $dbh -> prepare($sql);
+    	$query->execute();
+    }
+
 }

@@ -125,8 +125,8 @@ $(document).ready(function() {
 	    	var newCat = $('.fancybox-inner .newNameCat').val();
 	    	console.log(newCat);
 	    	$.ajax({
-            	url: "./ajax/script_addcategory.php",
-            	type: "POST",
+            	url: './ajax/script_addcategory.php',
+            	type: 'POST',
             	data: { name: newCat },  
           	});
 	    	$.fancybox.close();
@@ -184,6 +184,10 @@ $(document).ready(function() {
 	        }
         );
 
+    });
+
+    $('#task-complete').on('click', function(){
+    	event.preventDefault();
     });
 });
 
