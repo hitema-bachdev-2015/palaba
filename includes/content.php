@@ -22,7 +22,7 @@
                     );
                    $reponse1 = $query1->FetchAll();
                    for ($x=0; $x < count($reponse1) ; $x++):
-                      echo "<li data-id_tast='".$reponse1[$x]['id']."'>".$reponse1[$x]['content']."</li>";
+                      echo "<li data-id_tast='".$reponse1[$x]['id']."'>".$reponse1[$x]['content']."<img class='btnDelete' src='img/corbeille.png'></li>";
                    endfor;
       echo "    </ul>
             </li>";
