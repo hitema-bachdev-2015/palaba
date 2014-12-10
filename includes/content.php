@@ -7,7 +7,7 @@
     <header class='titre'>
     <i class='fa fa-bars moveCat'></i>
     <h2>".$cat->getName()."</h2>
-    <i data-id_cat='".$cat->getId()."'>x</i>
+    <i data-id_cat='".$cat->getId()."'><i class='fa fa-times'></i></i>
     </header>
     <ul>"; 
     foreach($cat->getTasks() as $task){

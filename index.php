@@ -39,7 +39,7 @@ require_once('classes/Tools.php');
 	<div id="contener">
 		<h1>Gestionnaire de tache</h1>
 		<?php include('includes/content.php'); ?>
-		
+		<span id='exportDbh'>Export DBH</span>
 		<?php include('includes/add-category.php'); ?>
 		<?php include('includes/confirm-delete.php'); ?>
 		<?php include('includes/tasks-complete.php'); ?>

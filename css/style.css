@@ -220,10 +220,7 @@ footer {
 	position: absolute;
 	right: 15px;
 	top: 20px;
-	background: #fff;
-	color: #000;
 	width: 20px;
-	height: 20px;
 	border-radius: 50%;
 	font-size: 17px;
 	font-weight: 700;
@@ -243,4 +240,19 @@ footer {
 	padding: 7px;
 	border-bottom: 1px solid #bbb;
 	position: relative;
+}
+
+
+/* Export */
+#exportDbh 
+{
+	font-size: 20px;
+	border-radius: 10px;
+	background-color: rgb(65, 131, 215);
+	color: #fff;
+	position: absolute;
+	top: 13px;
+	right: 110px;
+	padding: 15px;
+	cursor: pointer;
 }
