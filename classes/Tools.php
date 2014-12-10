@@ -17,8 +17,15 @@ class Tools {
 			));
 			return $dbh->lastInsertId();
 	}
-	public function addCategory($name = null, $position = null){
-		
+
+	public static function addCategory($name = null, $position = null){
+		global $dbh;
+		$sql = "INSERT INTO category (name, position) VALUES (:nom, :pos)";
+        $query = $dbh -> prepare($sql);
+        $query -> execute(array(
+            ":nom" => $name,
+            ":pos" => $position
+            ));
 	}
 
 	public static function isEmpty($field)
