@@ -80,7 +80,8 @@ h1
 	height:40px;
 }
 
-#add-task form input[type="submit"]{
+#add-task form input[type="submit"]
+{
 	display: block;
 	float:right;
 	width:100px;
@@ -91,36 +92,27 @@ h1
 }
 
 
-/* CATEGORY */
-#sortable {
-	margin: 0 auto;
+#add-category
+{
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	background-color: rgb(65, 131, 215);
+	color: #fff;
+	position: absolute;
+	top: 6px;
+	right: 30px;
+}
+#add-category .fancybox 
+{
+	display: block;
+	font-size: 50px;
+	text-align: center;
+	color: #fff;
+	line-height: 56px;
 }
 
-#sortable li {
-width: 350px;
-display: inline-block;
-}
 
-#sortable header {
-background: rgb(65, 131, 215);
-padding: 15px;
-position: relative;
-font-size: 25px;
-color: #fff;
-text-align: center;
-}
-
-#sortable .titre {
-/*background: blue;
-padding: 10px;*/
-display: inline-block;
-}
-
-#sortable header i {
-position: absolute;
-right: 15px;
-top: 13px;
-}
 
 
 /* FOOTER */
@@ -131,52 +123,63 @@ footer{
 	line-height: 80px;
 	height: 80px;
 	text-align: center;
-	position:fixed;
-	bottom:0;
 	background:#2C3E50;
 }
 
 /* CONTENT */
-
-ul#sortable{
-	display:block;
-	width:730px;
-	margin:20px auto;
-}
-
-ul#sortable li{
-	float: left;
-	width:210px;
-	margin-right:50px;
-}
-
-ul#sortable li.last{
-	margin-right:0;
-}
-
-/* ADD CATEGORY */
-a.add-cat{
-	display: block;
-	width: 210px;
-	height: 20px;
-	padding:15px 0;
-	text-align: center;
-	float: right;
-	background:#4183D7;
-	text-decoration: none;
-	color: #fff;
-	line-height: 20px;
+#contener
+{
+	width: 980px;
+	margin: 0 auto;
 	position: relative;
 }
-
-a.add-cat i{
-	position: absolute;
-	font-size: 20px;
-	top:17px;
-	left: 20px;
+/* CATEGORY */
+#sortable 
+{
+	width:980px;
+	margin:20px auto
 }
 
-section.add-cat{
-	width:730px;
-	margin:80px auto;
+#sortable > li 
+{
+	width: 300px;
+	display: inline-block;
+	margin: 0 10px;
+	vertical-align: top;
+	height: 300px;
+	overflow: auto;
+	border: 1px solid #E0E0E0;
+	border-radius: 5px;
+}
+
+#sortable > li > header 
+{
+	background: rgb(65, 131, 215);
+	padding: 15px;
+	position: relative;
+	font-size: 25px;
+	color: #fff;
+	text-align: center;
+	cursor: pointer;
+}
+
+#sortable > li > .titre > h2
+{
+	display: inline-block;
+}
+
+#sortable > li > header > i 
+{
+	position: absolute;
+	right: 15px;
+	top: 13px;
+}
+
+/* 	TASK  */
+#sortable > li > ul > li
+{
+	background: rgb(235, 235, 235);
+	padding: 7px;
+	border-bottom: 1px solid #bbb;
+	position: relative;
 }

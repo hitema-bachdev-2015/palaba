@@ -34,11 +34,7 @@
 </head>
 <body>
 	<?php 
-		include('includes/add-task.php');
 
-		include('includes/content.php');
-
-		include('includes/add-category.php');
 
 		include('includes/footer.php');
 	?>
