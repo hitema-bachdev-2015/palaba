@@ -1,13 +1,28 @@
-/* GLOBAL */
-body{
+*
+{
+	font-family: 'Roboto', sans-serif !important;
+}
+
+body
+{
 	margin: 0;
 	padding: 0;
 	background: #fafafa;
 	font-family: 'Roboto', sans-serif;
 }
-.clear.both{
-	clear: both;
+a
+{
+	text-decoration: none;
 }
+h1 
+{
+	padding: 15px;
+	text-align: center;
+	font-size: 25px;
+	font-weight: 700;
+}
+
+
 /* ADD TASK */
 #add-task{
 	min-width: 800px;
