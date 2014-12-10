@@ -8,17 +8,8 @@ class Task {
 	private $end_type;
 	private $status;
 
-	function __construct($id, $id_category, $content, $date_end, $end_type, $status){
+	function __construct($id){
 		$this->id = $id;
-		$this->id_category = $id_category;
-		$this->content = $content;
-		$this->date_end = $content;
-		$this->end_type = $date_end;
-		$this->status = $status;
-	}
-
-	public function setId($i){
-		$this->id = $i;
 	}
 
 	public function setContent($c){
