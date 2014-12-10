@@ -17,7 +17,16 @@ class Category {
 		return $this->id;
 	}
 
+	public function getCat(){
+		global $dbh;
+		$query = "SELECT * FROM category WHERE id = :id";
 
+		$sth = $dbh->prepare($query);
+		$sth->execute( array('id'=>$this->id));
+		$reponse = $sth->fetch();
+		return $reponse;
+		
+	}
 	public function getAllTasks($id){
 		global $dbh;
 		$query = "SELECT * FROM task WHERE id_category = '$id' ORDER BY end_type, date_end ASC";

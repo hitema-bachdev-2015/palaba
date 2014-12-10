@@ -33,4 +33,18 @@ class Tools {
         return ($field === '' || $field === null);
     }
 
+    public static function getAllCat()
+    {
+		global $dbh;
+    	$sql = "SELECT * FROM category ORDER BY position";
+	    $query = $dbh->prepare($sql);
+	    $query->execute();
+	    $reponse = $query->FetchAll();
+	    foreach ($reponse as $value) {
+	    	$cat[] = new Category($value['id']);
+	    }
+	    return $cat;
+    }
+
+
 }
