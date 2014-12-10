@@ -24,9 +24,9 @@ $(document).ready(function() {
 
 	$("select#end_select").change(function(){
 		var selected = $("#end_select option:selected").val();
-		if(selected == 2){
+		if(selected == 1){
 			$("#datepicker").show();
-		}else if(selected != 2){
+		}else if(selected != 1){
 			$("#datepicker").hide();
 		}
 	});
