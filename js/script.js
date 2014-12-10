@@ -1,9 +1,9 @@
 //datepicker
 $(document).ready(function() {
 	// Gestion deplacement categorie
-	    var category = new Category({id : 3});
-    category.moveCat();
-      category.addTask(1);
+	//var category = new Category({id : 3});
+   // category.moveCat();
+      //category.addTask(1);
     $("#sortable > li > header >i").on('click', function(event){
           var myId = event.currentTarget.attributes[0].value;
           var myLi = event.currentTarget.parentNode.parentNode;
@@ -57,8 +57,8 @@ $(document).ready(function() {
 						END_TYPE_TASK:End_Type_Task,
 					},
        			success : function(data){ // code_html contient le HTML renvoyé
-       			console.log(data);
-
+					//alert(data);
+					addTask(data);
        			}
    			});
 			//alert(Content_Task+" "+Category_Task+" "+Date_Picker+" "+End_Type_Task);
