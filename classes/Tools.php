@@ -64,6 +64,7 @@ class Tools {
     	// creer l'objet category
     }
 
+    // Passes toutes les taches au statut terminé
     public static function completeAllTasks()
     {
     	global $dbh;
@@ -71,5 +72,4 @@ class Tools {
     	$query = $dbh -> prepare($sql);
     	$query->execute();
     }
-
 }

@@ -1,6 +1,5 @@
 <?php
 class Task {
-
 	protected $id;
 	private $id_category;
 	private $content;

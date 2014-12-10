@@ -1,7 +1,7 @@
 <?php
-	//require_once('../includes/dbConnect.php');
 require_once('../classes/Tools.php');
 require_once('../includes/bdd.php');
+
 $content=$_POST["CONTENT"];
 $category=$_POST["CATEGORY"];
 $date=$_POST["DATE"];
@@ -34,7 +34,5 @@ if($content!="")
 	
 	echo json_encode($tab); 
 }
-else{
-	
-}
+else{}
 ?>
