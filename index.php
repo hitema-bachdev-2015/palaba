@@ -42,6 +42,7 @@ require_once('classes/Tools.php');
 		
 		<?php include('includes/add-category.php'); ?>
 		<?php include('includes/confirm-delete.php'); ?>
+		<?php include('includes/tasks-complete.php'); ?>
 	</div>
 	<?php include('includes/footer.php'); ?>
 

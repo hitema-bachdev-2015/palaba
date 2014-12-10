@@ -1,6 +1,6 @@
-<div id="task-complete"> 
-	Mark All Tasks Complete
-</div>
+<form method="POST" action="" name="complete-task">
+	<input type="submit" value="Marquer les tâches comme faites" name="btnTaskComplete">
+</form>
 <style>
 #task-complete{
 	width: 200px;
