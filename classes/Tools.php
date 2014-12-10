@@ -18,14 +18,17 @@ class Tools {
 			return $dbh->lastInsertId();
 	}
 
-	public static function addCategory($name = null, $position = null){
+	public static function addCategory($name){
 		global $dbh;
-		$sql = "INSERT INTO category (name, position) VALUES (:nom, :pos)";
-        $query = $dbh -> prepare($sql);
-        $query -> execute(array(
-            ":nom" => $name,
-            ":pos" => $position
-            ));
+        // la requete
+        $sql = "INSERT INTO category (name) VALUES (:name)";
+        // la preparation
+        $query = $dbh->prepare($sql);
+        // l'execute
+        $query->execute(
+                array('name' => $name)
+        );
+        // creer l'objet category
 	}
 
 	public static function isEmpty($field)
@@ -44,22 +47,6 @@ class Tools {
 	    	$cat[] = new Category($value['id']);
 	    }
 	    return $cat;
-    }
-
-
-    public static function newCategory($name)
-    {
-    	global $dbh;
-    	// la requete
-    	$sql = "INSERT INTO category (name) VALUES (:name)";
-    	// la preparation
-    	$query = $dbh->prepare($sql);
-    	// l'execute
-    	$query->execute(
-    			array('name' => $name)
-    	);
-    	// creer l'objet category
-
     }
 
     public static function completeAllTasks()
