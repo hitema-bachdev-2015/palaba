@@ -10,6 +10,7 @@
 
 	$query = "SELECT id FROM task ORDER BY end_type ASC,date_end ASC";
 	$sth = $dbh->prepare($query);
+	$id_task=$dbh->lastInsertId(); 
 	$sth->execute();
 	$rows=$sth->fetchAll();		
 	for($i=0;$i<count($rows);$i++)
@@ -25,7 +26,8 @@
 			"category"=>$category,
 			"date"=>$date,
 			"end_type_date"=>$end_date,
-			"last_id"=>$last_id
+			"last_id"=>$last_id,
+			"id_task"=>$id_task
 		);
 
 		echo json_encode($tab); 
