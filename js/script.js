@@ -24,9 +24,9 @@ $(document).ready(function() {
 
 	$("select#end_select").change(function(){
 		var selected = $("#end_select option:selected").val();
-		if(selected == 2){
+		if(selected == 1){
 			$("#datepicker").show();
-		}else if(selected != 2){
+		}else if(selected != 1){
 			$("#datepicker").hide();
 		}
 	});
@@ -57,7 +57,7 @@ $(document).ready(function() {
 						END_TYPE_TASK:End_Type_Task,
 					},
        			success : function(data){ // code_html contient le HTML renvoyé
-       			alert(data);
+       			console.log(data);
 
        			}
    			});
@@ -67,14 +67,15 @@ $(document).ready(function() {
   	$(".btnDelete").click(function(event){
   		event.preventDefault();
   		$(this).parent().hide();
+  		console.log($(this).parent().attr('data-id_tast'));
   		$.ajax({
 			url : 'ajax/script_delete.php',
 			type : 'POST',
 			data: {
-				ID : $(this).parent().attr('data-id')
+				ID : $(this).parent().attr('data-id_tast')
 				},
    			success : function(data){ // code_html contient le HTML renvoyé
-	   			alert(data);
+	   			console.log("Tâche supprimé");
 	   			$(this).parent().remove();
    			}
 			});

@@ -1,6 +1,6 @@
 *
 {
-	font-family: 'Roboto', sans-serif !important;
+	font-family: 'Roboto', sans-serif;
 }
 
 body
@@ -217,7 +217,14 @@ footer{
 {
 	position: absolute;
 	right: 15px;
-	top: 13px;
+	top: 20px;
+	background: #fff;
+	color: #000;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	font-size: 17px;
+	font-weight: 700;
 }
 
 /* 	TASK  */
