@@ -2,6 +2,11 @@
 
 class Category {
 	protected $id;
+	private $name;
+	private $position;
+	private $tasks = array();
+	private $hydrated = false;
+
 
 
 	function __construct($id = null) {
@@ -14,18 +19,42 @@ class Category {
 
 
 	public function getId(){
+
 		return $this->id;
 	}
 
-	public function getCat(){
+	public function getName(){
+		if(!$this->hydrated) $this->hydrate();
+		return $this->name;
+	}
+
+	public function getPosition(){
+		if(!$this->hydrated) $this->hydrate();
+		return $this->position;
+	}
+
+	public function hydrate(){
 		global $dbh;
 		$query = "SELECT * FROM category WHERE id = :id";
 
 		$sth = $dbh->prepare($query);
-		$sth->execute( array('id'=>$this->id));
+		$sth->execute(array(
+			"id" 			=> $this->id,));
 		$reponse = $sth->fetch();
-		return $reponse;
-		
+
+		$this->name = $reponse["name"];
+		$this->position = $reponse["position"];
+
+		$query = "SELECT * FROM task WHERE id_category = :id ORDER BY end_type, date_end ASC";
+		$sth = $dbh->prepare($query);
+		$sth->execute(array('id'=> $this->id));
+		while($taskResult = $sth->fetch()) {
+			$task = new Task($taskResult["id"]);
+			$tasks[] = $task;
+	    }
+
+		$this->tasks = $tasks;
+		$this->hydrated = true;
 	}
 
 
@@ -54,28 +83,14 @@ class Category {
 					array(	'id' => $this->id )
 					);
 	}
-	public function getAllTasks($id){
-		global $dbh;
-		$query = "SELECT * FROM task WHERE id_category = '$id' ORDER BY end_type, date_end ASC";
 
-		$sth = $dbh->prepare($query);
-		$reponse = $sth->execute();
-		$tasks =array();
-		$i=0;
-
-		while ($reponse = $sth->fetch()) {
-   	 		$tasks[$i]['id'] = $reponse['id'];
-	   		$tasks[$i]['category'] = $reponse['id_category'];
-	   		$tasks[$i]['content'] = $reponse['content'];
-	    	$tasks[$i]['date_end'] = $reponse['date_end'];
-	    	$tasks[$i]['end_type'] = $reponse['end_type'];
-	    	$tasks[$i]['status'] = $reponse['status'];
-	    	$task[] = new Task($tasks[$i]['id'], $tasks[$i]['category'], $tasks[$i]['content'], $tasks[$i]['date_end'], $tasks[$i]['end_type'], $tasks[$i]['status']);
-	    	$i++;
-			
-		}
-		return $task;
+	public function getTasks(){
+		if(!$this->hydrated) $this->hydrate();
+		return $this->tasks;
 	}
+
 	
+	
+
 }
 

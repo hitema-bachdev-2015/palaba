@@ -7,12 +7,15 @@ class Task {
 	private $date_end;
 	private $end_type;
 	private $status;
+	private $hydrated = false;
 
 	function __construct($id){
 		$this->id = $id;
 	}
 
 	public function setContent($c){
+		if(!$this->hydrated) $this->hydrate();
+
 		$this->content = $c;
 	}
 
@@ -47,7 +50,22 @@ class Task {
 	public function getStatus(){
 		return $this->status;
 	}
-	
+
+	public function hydrate(){
+		global $dbh;
+		$query= "SELECT * FROM Task Where id = :id";
+		$sth = $dbh->prepare($query);
+		$sth->execute(array('id'=> $this->id));
+		$reponse = $sth->Fetch();
+		
+		$this->content = $reponse["content"];
+		$this->date_end = $reponse["date_end"];
+		$this->end_type = $reponse["end_type"];
+		$this->status = $reponse["status"];
+		
+
+	}
+
 	public function update(){
 
 		$req = "UPDATE TASK SET content=$this->content,end_type=$this->end_type,date_end=this->date_end WHERE this->id=id";
