@@ -8,31 +8,17 @@
     <form method="post" action="">
     	<label>
     		<span>Name :</span>
-    		<input type="text" name="add-category-name"  placeholder="Entrer un nom de catégorie" required=""> <br>
-    		<span>Position :</span>
-    		<select name="add-category-position">
-    			<?php
-    				for ($i = 0; $i < 3; $i++){
-    					echo "<option name=".$i."> $i </option>";
-    				}
-    			?>
-
-    		</select>
+    		<input type="text" name="add-category-name"  class="newNameCat" placeholder="Entrer un nom de catégorie" required=""> <br>
     	</label>
-        <input type="submit" name ="ok" value="OK">
+        <input type="submit" class='btnSubmitCat' name ="ok" value="OK">
         <?php
        		global $dbh;
         	if (isset($_POST['nom'])) {
                 $sql = "INSERT INTO category (name, position) VALUES (:nom, :pos)";
                 $query = $dbh -> prepare($sql);
-                $resul = $query -> fetchAll();
 
-                if (!isset($_POST['pos']))
-                {
-                    $position = 0;
-                }else{
-                    $position = $_POST['pos'];
-                }
+                $position = 0;
+   
                 $query -> execute(array(
                     ":nom" => $_POST['nom'],
                     ":pos" => $position

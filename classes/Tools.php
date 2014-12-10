@@ -47,4 +47,19 @@ class Tools {
     }
 
 
+    public static function newCategory($name)
+    {
+    	global $dbh;
+    	// la requete
+    	$sql = "INSERT INTO category (name) VALUES (:name)";
+    	// la preparation
+    	$query = $dbh->prepare($sql);
+    	// l'execute
+    	$query->execute(
+    			array('name' => $name)
+    	);
+    	// creer l'objet category
+
+    }
+
 }

@@ -48,13 +48,17 @@ class Category {
 		$query = "SELECT * FROM task WHERE id_category = :id ORDER BY end_type, date_end ASC";
 		$sth = $dbh->prepare($query);
 		$sth->execute(array('id'=> $this->id));
+		
 		while($taskResult = $sth->fetch()) {
 			$task = new Task($taskResult["id"]);
 			$tasks[] = $task;
 	    }
 
-		$this->tasks = $tasks;
-		$this->hydrated = true;
+		if (!empty($tasks)) {
+			$this->tasks = $tasks;
+			$this->hydrated = true;
+		}	
+
 	}
 
 
