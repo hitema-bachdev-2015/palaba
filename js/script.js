@@ -186,9 +186,15 @@ $(document).ready(function() {
 
 });
 
-$('#task-complete').on('click', function(){
-	event.preventDefault();
-});
+  $('.btnTaskComplete').on('click', function(){
+	 event.preventDefault();
+   console.log("Test 1 2 1 2 ");
+  $.ajax({
+          url: './ajax/completeTask.php',
+          type: 'POST',  
+        });
+
+  });
 });
 
 
