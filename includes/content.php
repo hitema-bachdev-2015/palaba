@@ -11,7 +11,7 @@
       echo "<li data-id_cat='".$reponse[$i]['id']."'>
                 <header class='titre'>
                   <h2>".$reponse[$i]['name']."</h2>
-                  <i data-id_cat='".$reponse[$i]['id']."'>s</i>
+                  <i data-id_cat='".$reponse[$i]['id']."'>x</i>
                 </header>
                 <ul>";
                    // affichage des taches
@@ -22,7 +22,7 @@
                     );
                    $reponse1 = $query1->FetchAll();
                    for ($x=0; $x < count($reponse1) ; $x++):
-                      echo "<li data-id_tast='".$reponse1[$x]['id']."'>".$reponse1[$x]['content']."<img class='btnDelete' src='img/corbeille.png'></li>";
+                      echo "<li data-id_tast='".$reponse1[$x]['id']."'>".$reponse1[$x]['content']."<i class='fa fa-trash btnDelete'></i></li>";
                    endfor;
       echo "    </ul>
             </li>";
