@@ -9,4 +9,5 @@
 	// 	$position = 0;
  //    	Tools::addCategory($name, $position);
 	// }
+	
 ?>

@@ -82,7 +82,6 @@ $(document).ready(function() {
   	});
 	
 	$("a.add-cat").click(function () {
-		console.log("a");
         $.fancybox(
                 $('#toto').html(),
                 {
@@ -97,34 +96,19 @@ $(document).ready(function() {
                     }
                  }
             );
+
 	    $(".btnSubmitCat").on("click", function(event){
 	    	event.preventDefault();
 	    	var newCat = $('.fancybox-inner .newNameCat').val();
 	    	console.log(newCat);
 	    	$.ajax({
-            url: "./ajax/script_addcategory.php",
-            type: "POST",
-            data: { name: newCat },
-            // Verifier le resultat
-            // success: function(data){
-            //       console.log(data);
-            // }
-          });
-	    })
+            	url: "./ajax/script_addcategory.php",
+            	type: "POST",
+            	data: { name: newCat },  
+          	});
+	    	$.fancybox.close();
+	    });
     });
 });
 
-// $(document).on("submit", ".fancybox-inner form.add-cat", function(e){
-// 	event.preventDefault();
-// 	 	$.ajax({
-// 			url : 'ajax/script_addcategory.php',
-// 			type : 'POST',
-// 			data: {
-// 				nameCategory : 
-// 				},
-//    			success : function(data){ // code_html contient le HTML renvoyé
-// 	   			console.log("Categorie ajouté");
-	   			
-//    			}
-// 			});
-// 	 });
+
