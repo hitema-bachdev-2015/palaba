@@ -2,7 +2,7 @@
 	<form action="#" method="get">
 		<input id="cont-task" type="text" name="content-task" placeholder="Enter the new task here..."> 
 		<div id="forKeyup">
-			<select name="id-category-task">
+			<select name="id-category-task"> 
 				<?php
 				$query = "SELECT id,name FROM category";
 				$sth = $dbh->prepare($query);

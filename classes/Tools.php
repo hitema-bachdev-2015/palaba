@@ -19,15 +19,18 @@ class Tools {
     }
 
     // Insertion d'une nouvelle catégorie dans la table "category"
-    public static function addCategory($name = null, $position = null){
-      global $dbh;
-      $sql = "INSERT INTO category (name, position) VALUES (:nom, :pos)";
-      $query = $dbh -> prepare($sql);
-      $query -> execute(array(
-        ":nom" => $name,
-        ":pos" => $position
-        ));
-    }
+	public static function addCategory($name){
+		global $dbh;
+        // la requete
+        $sql = "INSERT INTO category (name) VALUES (:name)";
+        // la preparation
+        $query = $dbh->prepare($sql);
+        // l'execute
+        $query->execute(
+                array('name' => $name)
+        );
+        // creer l'objet category
+	}
 
     // Détermine si $field est vide ou null
     public static function isEmpty($field){
@@ -61,12 +64,12 @@ class Tools {
     	// creer l'objet category
     }
 
-    // Completer toutes les tâches
-    public static function completeAllTasks(){
-        global $dbh;
-        $sql = "UPDATE tasks SET status = 2 WHERE 1";
-        $query = $dbh -> prepare($sql);
-        $query->execute();
+    public static function completeAllTasks()
+    {
+    	global $dbh;
+    	$sql = "UPDATE tasks SET status = 2 WHERE 1";
+    	$query = $dbh -> prepare($sql);
+    	$query->execute();
     }
 
 }
