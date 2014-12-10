@@ -4,7 +4,7 @@
 </div>
 
 <div id="toto" style="display:none;">
-	<h2>Add Category</h2>
+	<h2>Add Category</h2><br>
     <form method="post" action="">
     	<label>
     		<span>Name :</span>
