@@ -2,20 +2,20 @@
 $(document).ready(function() {
 	// Gestion deplacement categorie
 	var category = new Category({id : 3});
-   category.moveCat();
-      //category.addTask(1);
+    category.moveCat();
+    //category.addTask(1);
     $("#sortable > li > header >i").on('click', function(event){
-          var myId = event.currentTarget.attributes[0].value;
-          var myLi = event.currentTarget.parentNode.parentNode;
-          $.ajax({
+        var myId = event.currentTarget.attributes[0].value;
+		var myLi = event.currentTarget.parentNode.parentNode;
+        $.ajax({
             url: "ajax/supCat.php",
             type: "POST",
             data: { id: myId },
             success: function(){
                   myLi.remove();
             }
-          });
-      });
+        });
+    });
 
 	
   	$("#datepicker").datetimepicker();
@@ -57,8 +57,8 @@ $(document).ready(function() {
 						END_TYPE_TASK:End_Type_Task,
 					},
        			success : function(data){ // code_html contient le HTML renvoyé
-					//alert(data);
-					addTask(data);
+					console.log(data);
+					addTask(jQuery.parseJSON(data));
        			}
    			});
 			//alert(Content_Task+" "+Category_Task+" "+Date_Picker+" "+End_Type_Task);
