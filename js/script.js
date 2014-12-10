@@ -34,10 +34,10 @@ $(document).ready(function() {
 	$("#cont-task").keyup(function(){
 		var valText = $("#cont-task").val().trim();
 			if(valText != null || valText != ''){
-				$("#forKeyup").show();
+				$("#forKeyup").stop().slideDown().show();
 			}
 			if(valText == null || valText == ''){
-				$("#forKeyup").hide();
+				$("#forKeyup").stop().slideUp();
 			}
 	});
   
@@ -58,6 +58,7 @@ $(document).ready(function() {
 					},
        			success : function(data){ // code_html contient le HTML renvoyé
 					console.log(data);
+					$("#add-task form input[name='content-task']").val("")
 					addTask(jQuery.parseJSON(data));
        			}
    			});
