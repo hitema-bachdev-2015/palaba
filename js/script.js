@@ -59,6 +59,7 @@ $(document).ready(function() {
        			success : function(data){ // code_html contient le HTML renvoyé
 					console.log(data);
 					$("#add-task form input[name='content-task']").val("")
+					$("#datepicker").val("");
 					addTask(jQuery.parseJSON(data));
        			}
    			});
