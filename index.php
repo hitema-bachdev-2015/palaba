@@ -40,8 +40,9 @@
 		<?php include('includes/content.php'); ?>
 		
 		<?php include('includes/add-category.php'); ?>
+		<?php include('includes/confirm-delete.php'); ?>
 	</div>
-
+	<?php include('includes/tasks-complete.php'); ?>
 	<?php include('includes/footer.php'); ?>
 
 </body>

@@ -53,7 +53,7 @@ class Task {
 
 	public function hydrate(){
 		global $dbh;
-		$query= "SELECT * FROM Task Where id = :id";
+		$query= "SELECT * FROM task Where id = :id";
 		$sth = $dbh->prepare($query);
 		$sth->execute(array('id'=> $this->id));
 		$reponse = $sth->Fetch();
@@ -66,16 +66,40 @@ class Task {
 
 	}
 
-	public function update(){
-
-		$req = "UPDATE TASK SET content=$this->content,end_type=$this->end_type,date_end=this->date_end WHERE this->id=id";
+	public function selectTask(){
+		global $dbh;
+		$req = "SELECT * FROM task WHERE id=:id";
 		$query = $dbh->prepare($req);
-		return $query->execute();
+		$query->execute(
+				array(
+						'id' => $this->id
+					)
+			);
+		$reponse = $query->fetch();
+		echo json_encode($reponse);
+	}
+
+	public function updateTask(){
+		global $dbh;
+		$req = "UPDATE task SET content = :content,
+								end_type = :end_type, 
+								date_end = :date_end WHERE id= :id";
+
+		$query = $dbh->prepare($req);
+		$query->execute(
+				array(
+						'id' => $this->id,
+						'content' => $this->content,
+						'end_type' => $this->end_type,
+						'date_end' => $this->date_end
+					)
+			);
+	
 	}
 
 	public function delete(){
 		global $dbh;
-		$sql = "DELETE FROM task WHERE id = :id";
+		$sql = "DELETE FROM todolist.task WHERE task.id = :id";
 		$query = $dbh->prepare($sql);
 		$query->execute(array(
 				':id' => $this->id
