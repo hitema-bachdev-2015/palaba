@@ -28,6 +28,18 @@ class Category {
 		
 	}
 
+
+	public function reorganisation ($position){
+		global $dbh;
+		$sql = "UPDATE category SET position = :position WHERE id=:id";
+		$query = $dbh->prepare($sql);
+		$query->execute(
+			array(	'position' => $position,
+					'id' => $this->id,
+			)
+		);
+	}
+
 	public function supCat (){
 		global $dbh;
 		$sql1 = "DELETE FROM category WHERE id=:id";
