@@ -6,8 +6,10 @@
 	$category=$_POST["CATEGORY"];
 	$date=$_POST["DATE"];
 	$end_date=$_POST["END_TYPE_TASK"];
+	
+	if($content!="")
+	{
 	$last_id=Tools::addTask($category,$content,$date,$end_date);
-
 	$query = "SELECT id FROM task WHERE id_category=:idCat ORDER BY end_type ASC,date_end ASC";
 	$sth = $dbh->prepare($query);
 	$id_task=$dbh->lastInsertId(); 
@@ -31,4 +33,8 @@
 		);
 		
 		echo json_encode($tab); 
+	}
+	else{
+	 
+	}
 ?>
