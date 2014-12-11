@@ -11,7 +11,12 @@ $(document).ready(function() {
     		url: "ajax/delCat.php",
     		type: "POST",
     		data: { id: myId },
+			beforeSend: function(){
+				//console.log("Loading");
+				loading();
+			},
     		success: function(){
+				endLoading();
     			myLi.remove();
     		}
     	});

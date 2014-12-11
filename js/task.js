@@ -41,7 +41,7 @@ function addTask(params){
 		
 		$(li).text(content);
 		$(li).attr("data-id-task", id);  
-		$(li).append( "<i class=\"fa fa-trash btnDelete\"></i>" );
+		$(li).append( "<i class=\"fa fa-check btnCheck\"></i>" );
 		if(position==0)
 		{
 			var ul = document.createElement("ul");
