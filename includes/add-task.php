@@ -9,7 +9,7 @@
 				$sth->execute();
 				while ($row = $sth->fetch()) {
 					?>
-					<option value="<?=$row["id"]?>"><?= $row["name"]?></option>
+					<option value="<?php echo $row["id"]; ?>"><?php echo $row["name"];?></option>
 					<?php
 				}
 				?>
