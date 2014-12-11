@@ -70,12 +70,12 @@ $(document).ready(function() {
     var li_to_delete;
     $("#sortable > li > ul > li").mouseover(function(event){
         event.preventDefault();
-        $(this).children().css("display","block");
+        $(this).children(".btnDelete").css("display","block");
     });
     $("#sortable > li > ul > li").mouseout(function(event){
         event.preventDefault();
        // console.log($(this).children());
-       $(this).children().css("display","none");
+       $(this).children(".btnDelete").css("display","none");
     });
     $(".btnDelete").click(function(event){
         event.preventDefault();
@@ -195,6 +195,17 @@ $(document).ready(function() {
 			}
 		}
 		);
+
+    /** CHECK TASK*/
+    $('.btnCheck').on('click', function(){
+        $(this).css("color","black");
+        var idToUpdate = $(this).parent().attr('data-id_task');
+        $.ajax({
+          url: './ajax/completeOneTask.php',
+          type: 'POST',
+          data: {id :idToUpdate}
+        });      
+    });
 
 });
 

@@ -109,4 +109,13 @@ class Task {
 		$query = $dbh->prepare($sql);
 		$query->execute();
 	}
+
+	public function completeThisTask(){
+		global $dbh;
+		$sql = "UPDATE task SET status = 2 WHERE task.id = :id";
+		$query = $dbh->prepare($sql);
+		$query->execute(array(
+			':id' => $this->id
+		));
+	}
 }
