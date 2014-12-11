@@ -5,7 +5,6 @@
 	foreach (Tools::getLateTask() as $taskLate) {
 		echo "<li>";
 		echo $taskLate['content'];
-		echo $taskLate['date_end']; 
 		echo "</li>";
 	}
 ?>
