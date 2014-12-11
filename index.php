@@ -32,6 +32,7 @@ require_once('classes/Tools.php');
 	<script type="text/javascript" src="js/fancybox/helpers/jquery.fancybox-media.js"></script>
 	<script type="text/javascript" src="js/fancybox/helpers/jquery.fancybox-thumbs.js"></script>
 	<script type="text/javascript" src="js/anorak.js"></script>
+	<script type="text/javascript" src="js/nc.js"></script>
 </head>
 <body>	
 	<?php include('includes/add-task.php'); ?>

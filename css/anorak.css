@@ -121,6 +121,8 @@ margin-right: 20px;
 #coloumn-right {
 	height:100%;
 }
+
+#coloumn-right  #lateTask, #coloumn-right #exportDbh{display:none;}
 #coloumn-right #contener{
 	width:780px;
 	background:#e0e0e0;
@@ -137,7 +139,7 @@ margin-right: 20px;
 	width: 780px;
 }
 #coloumn-right #contener ul#sortable > li{
-	margin: 0 30px;
+	margin: 10px 30px;
 	border: none;
 	border-radius:0;
 	min-height: 60px;
