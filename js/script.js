@@ -207,6 +207,16 @@ $(document).ready(function() {
         });
 
   });
+
+  $("#exportDbh").on("click",function(){
+    $.ajax({
+          url: 'ajax/export.php',
+          success: function(data){
+            window.open('./fichier/task.csv'); 
+            window.open('./fichier/category.csv'); 
+          } 
+        });
+    });
 });
 
 

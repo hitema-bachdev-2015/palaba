@@ -50,6 +50,26 @@ class Tools {
         return $cat;
     }
 
+    // liste de toutes les catégories
+    public static function getListCat(){
+        global $dbh;
+        $sql = "SELECT * FROM category";
+        $query = $dbh->prepare($sql);
+        $query->execute();
+        $reponse = $query->FetchAll();
+        return $reponse;
+    }
+
+    // liste de toutes les taches
+    public static function getListTask(){
+        global $dbh;
+        $sql = "SELECT * FROM task";
+        $query = $dbh->prepare($sql);
+        $query->execute();
+        $reponse = $query->FetchAll();
+        return $reponse;
+    }
+
     // Création d'une nouvelle catégoire dans la table "category"
     public static function newCategory($name){
         global $dbh;
