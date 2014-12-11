@@ -124,7 +124,7 @@ $(document).ready(function() {
 			// 	loading();
 			// },
             success : function(data){
-				//endLoading();
+				endLoading();
                 li_to_delete.remove();
                 $.fancybox.close();
                 location.assign(location.href);
@@ -134,6 +134,7 @@ $(document).ready(function() {
 
     $(document).on("click","#noConfirmDelete",function(event) {
         event.preventDefault();
+        endLoading();
         $.fancybox.close();
         $(".btnDelete").css("display", "none");
     });
