@@ -28,6 +28,7 @@ $(document).ready(function() {
     		$("#datepicker").show();
     	}else if(selected != 1){
     		$("#datepicker").hide();
+            $("#forNotif").stop().slideUp();
     	}
     });
 	$("#cont-task").keyup(function(){
@@ -39,6 +40,10 @@ $(document).ready(function() {
 				$("#forKeyup").stop().slideUp();
 			}
 	});
+
+    $("#datepicker").on("click",function(){
+        $("#forNotif").stop().slideDown().show();
+    });
   
     $("#add-task form input[type='submit']").on("click",function(event){
 			event.preventDefault();
@@ -55,10 +60,16 @@ $(document).ready(function() {
 						DATE:Date_Picker,
 						END_TYPE_TASK:End_Type_Task,
 					},
+				async : false,
+				beforeSend: function(){
+					console.log("Loading");
+					loading();
+				},
        			success : function(data){ // code_html contient le HTML renvoyé
 					console.log(data);
 					$("#add-task form input[name='content-task']").val("")
 					$("#datepicker").val("");
+					endLoading();
 					addTask(jQuery.parseJSON(data));
        			}
    			});
@@ -70,14 +81,13 @@ $(document).ready(function() {
     var li_to_delete;
     $("#sortable > li > ul > li").mouseover(function(event){
         event.preventDefault();
-        $(this).children().css("display","block");
+        $(this).children(".btnDelete").css("display","block");
     });
     $("#sortable > li > ul > li").mouseout(function(event){
         event.preventDefault();
        // console.log($(this).children());
-       $(this).children().css("display","none");
+       $(this).children(".btnDelete").css("display","none");
     });
-
     $(".btnDelete").click(function(event){
         event.preventDefault();
         id_to_delete= $(this).parent().attr('data-id_task');
@@ -118,7 +128,6 @@ $(document).ready(function() {
     /****/
     
     $("a.add-cat").click(function () {
-
     	$.fancybox(
     		$('#toto').html(),
     		{
@@ -149,9 +158,8 @@ $(document).ready(function() {
     });
 
     $("#sortable > li > ul > li").on("click",function (event) {
+	// console.log("a");
 
-        $.fancybox(
-            $('#titi').html());
 	event.preventDefault();
 	var myId = event.target.attributes[0].value;
 	console.log(myId);
@@ -190,7 +198,25 @@ $(document).ready(function() {
 		}
 	});
 
-	
+	$.fancybox(
+		$('#titi').html(),
+		{
+			'onStart': function () {
+
+			}
+		}
+		);
+
+    /** CHECK TASK*/
+    $('.btnCheck').on('click', function(){
+        $(this).css("color","black");
+        var idToUpdate = $(this).parent().attr('data-id_task');
+        $.ajax({
+          url: './ajax/completeOneTask.php',
+          type: 'POST',
+          data: {id :idToUpdate}
+        });      
+    });
 
 });
 
