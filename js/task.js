@@ -40,9 +40,9 @@ function addTask(params){
 		var li = document.createElement("li");
 		
 		$(li).text(content);
-		$(li).attr("data-id-task", id);  
+		$(li).attr("data-id_task", id);  
 		$(li).append( "<i class=\"fa fa-check btnCheck\"></i>" );
-		$(li).append( "<i id=\"btnDeleteI\" class=\"fa fa-trash btnDelete\" style=\"float: right; display: none;\"></i>" );
+		$(li).append("<i id=\"btnDeleteI\" class=\"fa fa-trash btnDelete\" style=\"float: right; display: none;\"></i>");
 		if(position==0)
 		{
 			var ul = document.createElement("ul");
