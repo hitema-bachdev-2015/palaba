@@ -10,6 +10,7 @@ function KonamiCode(id){
         $('body').addClass('hidden');
         $('canvas').css('width','100%');
         $('canvas').css('height','100%');
+        $('canvas').css('display','block');
         var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 var fps = document.getElementById('fps');
