@@ -127,7 +127,7 @@ $(document).ready(function() {
 				//endLoading();
                 li_to_delete.remove();
                 $.fancybox.close();
-                // location.assign(location.href);
+                location.assign(location.href);
             }
         });
     });
