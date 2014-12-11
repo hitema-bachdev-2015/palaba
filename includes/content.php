@@ -1,5 +1,21 @@
+<ul id ='lateTask'>
+<li><header class='titre'>Overdue tasks :</header><li>
+<ul>
+<?php
+	foreach (Tools::getLateTask() as $taskLate) {
+		echo "<li>";
+		echo $taskLate['content'];
+		echo $taskLate['date_end']; 
+		echo "</li>";
+	}
+?>
+</ul>
+</ul>
+
+
 <ul id="sortable">
   <?php 
+ 
   foreach (Tools::getAllCat() as $cat) {
     $cat->hydrate();
 
