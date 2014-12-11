@@ -84,11 +84,11 @@ $(document).ready(function() {
     /***DELETE TASK****/
     var id_to_delete;
     var li_to_delete;
-    $("#sortable > li > ul > li").mouseover(function(event){
+	$(document).on("mouseover", "#sortable > li > ul > li", function(event){
         event.preventDefault();
         $(this).children(".btnDelete").css("display","block");
     });
-    $("#sortable > li > ul > li").mouseout(function(event){
+	$(document).on("mouseout", "#sortable > li > ul > li", function(event){
         event.preventDefault();
        // console.log($(this).children());
        $(this).children(".btnDelete").css("display","none");
@@ -173,7 +173,7 @@ $(document).ready(function() {
     		});
     	});
     });
-
+	/***UPDATE TASK ***/
     $("#sortable > li > ul > li").on("click",function (event) {
 	// console.log("a");
 
@@ -185,9 +185,14 @@ $(document).ready(function() {
 		url: "ajax/displayTask.php",
 		type: "POST",
 		data: { name: myId },
+		beforeSend: function(){
+				//console.log("Loading");
+				loading();
+		},
 		success: function(data){
 			var content = JSON.parse(data);
-			console.log(content);
+			//console.log(content);
+			endLoading();
 			$(".nameTaskUp").val(content['content']);
 			$(".date_end").datetimepicker();
 			$(".typeTask").val(content['end_type']);
@@ -204,9 +209,14 @@ $(document).ready(function() {
 						date: date,
 						type: typeTask 
 					},
+					beforeSend: function(){
+						//console.log("Loading");
+						loading();
+					},
 					success: function(data){
 						var content = JSON.parse(data);
 						console.log(content);
+						endLoading();
 						$(".nameTaskUp").val(content['content']);
 						console.log($(".date_end").val());
 					}
