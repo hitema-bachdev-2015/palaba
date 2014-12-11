@@ -13,7 +13,11 @@
     foreach($cat->getTasks() as $task){
       $task->hydrate();
 
-      echo "<li data-id_task ='".$task->getId()."''> ".$task->getContent()." <i  id='btnDeleteI' class='fa fa-trash btnDelete' style='float: right;'></i></li>";
+      $check = "";
+      if($task->getStatus() == 2){
+        $check = 'checked';
+      }
+      echo "<li data-id_task ='".$task->getId()."''> <i class='fa fa-check btnCheck ".$check."'></i>".$task->getContent()." <i  id='btnDeleteI' class='fa fa-trash btnDelete' style='float: right;'></i></li>";
     }
 
     echo "</ul></li>";
