@@ -1,7 +1,4 @@
-var Category=function(params){
-	this.id=params.id;
-/*this.name = params.name;
-this.position = params.position;*/
+var Category=function(){
 
 }
 
@@ -25,17 +22,6 @@ Category.prototype.moveCat=function(){
     });
     $( "#sortable" ).disableSelection();
 }
+Category.prototype.addCat=function(){
 
-Category.prototype.addTask=function(idCat){
-	//debugger;
-	$.ajax({
-				url : 'ajax/showTask.php',
-				type : 'POST',
-				data: {
-						IDCAT:idCat,
-					},
-       			success : function(data){ // code_html contient le HTML renvoyé
-       			 alert(data);
-       			}
-   			});
 }

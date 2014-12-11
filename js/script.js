@@ -1,9 +1,9 @@
 //datepicker
 $(document).ready(function() {
 	// Gestion deplacement categorie
-	var category = new Category({id : 3});
+	var category = new Category();
 	category.moveCat();
-    //category.addTask(1);
+	
     $("#sortable > li > header >i").on('click', function(event){
     	var myId = event.currentTarget.attributes[0].value;
     	var myLi = event.currentTarget.parentNode.parentNode;
@@ -62,11 +62,11 @@ $(document).ready(function() {
 					},
 				async : false,
 				beforeSend: function(){
-					console.log("Loading");
+					//console.log("Loading");
 					loading();
 				},
        			success : function(data){ // code_html contient le HTML renvoyé
-					console.log(data);
+					//console.log(data);
 					$("#add-task form input[name='content-task']").val("")
 					$("#datepicker").val("");
 					endLoading();
@@ -113,9 +113,15 @@ $(document).ready(function() {
             type : "POST",
             cache   : false,
             data: {ID :id_to_delete},
+			beforeSend: function(){
+				//console.log("Loading");
+				$.fancybox.close();
+				loading();
+			},
             success : function(data){
+				endLoading();
                 li_to_delete.remove();
-                $.fancybox.close();
+                
             }
         });
     });
@@ -146,22 +152,28 @@ $(document).ready(function() {
     	$(".btnSubmitCat").on("click", function(event){
     		event.preventDefault();
     		var newCat = $('.fancybox-inner .newNameCat').val();
-    		console.log(newCat);
+    		//console.log(newCat);
     		$.ajax({
     			url: './ajax/addCat.php',
     			type: 'POST',
-    			data: { name: newCat },  
+    			data: { name: newCat },
+				beforeSend: function(){
+					//console.log("Loading");
+					$.fancybox.close();
+					loading();
+				},
+				success : function(data){
+					endLoading();
+				}
     		});
-    		$.fancybox.close();
     	});
-
     });
 
     $("#sortable > li > ul > li").on("click",function (event) {
 	// console.log("a");
 
 	event.preventDefault();
-	var myId = event.target.attributes[0].value;
+	var myId = $(event.target).attr("data-id_task");
 	console.log(myId);
 
 	$.ajax({
