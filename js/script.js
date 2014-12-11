@@ -118,15 +118,16 @@ $(document).ready(function() {
             type : "POST",
             cache   : false,
             data: {ID :id_to_delete},
-			beforeSend: function(){
-				//console.log("Loading");
-				$.fancybox.close();
-				loading();
-			},
+			// beforeSend: function(){
+			// 	//console.log("Loading");
+			// 	$.fancybox.close();
+			// 	loading();
+			// },
             success : function(data){
-				endLoading();
+				//endLoading();
                 li_to_delete.remove();
-                location.assign(location.href);
+                $.fancybox.close();
+                // location.assign(location.href);
             }
         });
     });
@@ -179,7 +180,7 @@ $(document).ready(function() {
 
 	event.preventDefault();
 	var myId = $(event.target).attr("data-id_task");
-	console.log(myId);
+	//console.log(myId);
 
 	$.ajax({
 		url: "ajax/displayTask.php",
