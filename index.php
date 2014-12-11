@@ -35,9 +35,8 @@ require_once('classes/Tools.php');
 	<script type="text/javascript" src="js/nc.js"></script>
 </head>
 <body>	
+<canvas id="canvas"></canvas>
 	<?php include('includes/add-task.php'); ?>
-
-
 
 	<div id="contener">
 		<h1>Gestionnaire de tache</h1>

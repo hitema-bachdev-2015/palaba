@@ -200,3 +200,12 @@ margin-right: 20px;
 #coloumn-right #contener ul#sortable li ul li:hover i:hover{
 	background: #dd4c37;
 }
+
+body.hidden{
+  overflow: hidden;
+}
+
+canvas{
+  width: 0;
+  height: 0;
+}
