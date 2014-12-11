@@ -60,10 +60,16 @@ $(document).ready(function() {
 						DATE:Date_Picker,
 						END_TYPE_TASK:End_Type_Task,
 					},
+				async : false,
+				beforeSend: function(){
+					console.log("Loading");
+					loading();
+				},
        			success : function(data){ // code_html contient le HTML renvoyé
 					console.log(data);
 					$("#add-task form input[name='content-task']").val("")
 					$("#datepicker").val("");
+					endLoading();
 					addTask(jQuery.parseJSON(data));
        			}
    			});

@@ -319,3 +319,62 @@ footer {
 	color : black;
 	cursor: pointer;
 }
+
+/*----------------------------------------------------*\
+					LOADER ANIME DOUBLE					  					
+\*----------------------------------------------------*/
+.section{
+	font-family: sans-serif;
+	font-size: 40px;
+	color: #4183D7;
+	text-align: center;
+	background: none;
+	margin: auto auto;
+	width: 250px;
+	opacity: 1;
+	position: absolute;
+	top: 300px;
+	left: 41%;
+}
+
+.loader
+{
+	width: 50px;
+	height: 50px;
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+}
+
+.loader-double
+{
+	border-radius: 50px;	
+	border: 6px solid transparent;
+	border-top-color: #4183D7;
+	border-bottom-color: #4183D7;
+	animation: spin 1s linear infinite;
+	-webkit-animation: spin 1s linear infinite;
+}
+.loader-double:after	
+{
+	content:'';
+	position: absolute;
+	border: 6px solid transparent;
+	top: 5px;
+	left: 5px;
+	bottom: 5px;
+	right: 5px;
+	border-radius: 50px;
+	border-top-color: #4183D7;
+	border-bottom-color: #4183D7;
+	animation: spin 2s linear infinite;
+	-webkit-animation: spin 2s linear infinite;
+}
+@keyframes spin{
+	0%{ -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+	100%{ -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@-webkit-keyframes spin{
+	0%{ transform: rotate(0deg); -webkit-transform: rotate(0deg); }
+	100%{ transform: rotate(360deg); -webkit-transform: rotate(360deg); }
+}										  
