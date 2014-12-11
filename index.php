@@ -36,6 +36,8 @@ require_once('classes/Tools.php');
 <body>	
 	<?php include('includes/add-task.php'); ?>
 
+
+
 	<div id="contener">
 		<h1>Gestionnaire de tache</h1>
 		<?php include('includes/content.php'); ?>
@@ -43,6 +45,9 @@ require_once('classes/Tools.php');
 		<?php include('includes/add-category.php'); ?>
 		<?php include('includes/confirm-delete.php'); ?>
 		<?php include('includes/tasks-complete.php'); ?>
+		<?php include('includes/edittask.php'); ?>
+
+
 	</div>
 	<?php include('includes/footer.php'); ?>
 
