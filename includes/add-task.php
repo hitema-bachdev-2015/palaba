@@ -22,5 +22,16 @@
 			</select>
 			<input type="submit" name="submit_add-task" value="OK"/>
 		</div>
+		<div id="forNotif">
+				<span id="tNotif">Choisissez quand vous sera envoyé la notification de rappelle de tâche</span>
+				<select>
+					<option value="1">5min avant</option>
+					<option value="2">10min avant</option>
+					<option value="3">15 min avant</option>
+					<option value="4">30 min avant</option>
+					<option value="5">1h avant</option>
+					<option value="6">6h après</option>
+				</select>
+		</div>
 	</form>
 </header>

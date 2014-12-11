@@ -85,6 +85,28 @@ h1 {
 	height:40px;
 }
 
+#forNotif{
+	display: none;
+}
+
+#tNotif{
+	font-size: 13px;
+	background-color: rgb(39, 104, 187);
+	float: left;
+	width: 498px;
+	height: 18px;
+	padding: 11px;
+	text-align: center;
+}
+
+#forNotif select{
+	background:#6BB9F0;
+	border:none;
+	width:210px;
+	float: left;
+	height:40px;
+}
+
 #add-task form input[type="submit"] {
 	display: block;
 	float:right;

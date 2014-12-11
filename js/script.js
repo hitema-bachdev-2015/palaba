@@ -28,6 +28,7 @@ $(document).ready(function() {
     		$("#datepicker").show();
     	}else if(selected != 1){
     		$("#datepicker").hide();
+            $("#forNotif").stop().slideUp();
     	}
     });
 	$("#cont-task").keyup(function(){
@@ -39,6 +40,10 @@ $(document).ready(function() {
 				$("#forKeyup").stop().slideUp();
 			}
 	});
+
+    $("#datepicker").on("click",function(){
+        $("#forNotif").stop().slideDown().show();
+    });
   
     $("#add-task form input[type='submit']").on("click",function(event){
 			event.preventDefault();
