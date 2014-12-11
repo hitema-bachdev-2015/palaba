@@ -303,3 +303,19 @@ footer {
 	color : blue;
 	display: none;
 }
+
+/* check task*/
+#sortable > li > ul> li> .btnCheck{
+	color : darkgrey;
+	float: left;
+	padding-right: 5px;
+}
+
+#sortable > li > ul> li> .btnCheck.checked{
+	color : black;
+}
+
+#sortable > li > ul> li> .btnCheck:hover{
+	color : black;
+	cursor: pointer;
+}

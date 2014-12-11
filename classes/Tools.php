@@ -92,4 +92,16 @@ class Tools {
     	$query = $dbh -> prepare($sql);
     	$query->execute();
     }
+
+
+    public static function getLateTask(){
+    	global $dbh;
+    	// la requete
+    	$sql = "SELECT * FROM task WHERE date_end < now()";
+    	$query = $dbh->prepare($sql);
+    	$query->execute();
+    	$reponse = $query->FetchAll();
+    	return $reponse;
+    }
+
 }
