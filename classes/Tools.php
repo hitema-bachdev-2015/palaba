@@ -94,7 +94,7 @@ class Tools {
     }
 
 
-    public static function getlateTask(){
+    public static function getLateTask(){
     	global $dbh;
     	// la requete
     	$sql = "SELECT * FROM task WHERE date_end < now()";
