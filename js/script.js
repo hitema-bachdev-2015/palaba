@@ -224,15 +224,15 @@ $(document).ready(function() {
 			});
 		}
 	});
+    //pas touche à cette partie je verrais ça demain
+	// $.fancybox(
+	// 	$('#titi').html(),
+	// 	{
+	// 		'onStart': function () {
 
-	$.fancybox(
-		$('#titi').html(),
-		{
-			'onStart': function () {
-
-			}
-		}
-		);
+	// 		}
+	// 	}
+	// 	);
 
     /** CHECK TASK*/
     $('.btnCheck').on('click', function(){
