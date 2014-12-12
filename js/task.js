@@ -64,6 +64,7 @@ function addTask(params){
 		var li = document.createElement("li");
 		
 		$(li).text(content);
+		$(li).addClass("ui-sortable-handle");
 		$(li).attr("data-id_task", id);  
 		$(li).append( "<i class=\"fa fa-check btnCheck\"></i>" );
 		$(li).append("<i id=\"btnDeleteI\" class=\"fa fa-trash btnDelete\"></i>");
@@ -71,10 +72,8 @@ function addTask(params){
 
 		if(position==0)
 		{
-			//var ul = document.createElement("ul");
-			var ul=$("#sortable li[data-id_cat=\""+idCat+"\"]")
-			$(ul).append(li);
-			parentContainer.append( $(ul) );
+			var ul=$("#sortable li[data-id_cat=\""+idCat+"\"] div.myElement ul.sortableTask");
+			$(ul).append( $(li) );
 		}
 		else
 		{
