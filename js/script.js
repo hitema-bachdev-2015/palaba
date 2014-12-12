@@ -35,6 +35,14 @@ $(document).ready(function() {
         });
         $(this).hide();
     });
+
+    $(".preview").on('click', function(event){
+        $(this).parent().css({
+            height : '310px', 
+            overflow : 'hidden',
+        });
+        $(".next").show();
+    });
     
     $("#datepicker").datetimepicker();
     $("#datepicker").hide();

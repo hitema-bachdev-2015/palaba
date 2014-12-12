@@ -37,6 +37,9 @@
         echo "<li class='next'>...</li>";
       endif;
     }
+    if(count($cat->getTasks()) >9):
+        echo "<li class='preview' style='text-align:center; cursor:pointer;'><i style='float:none' class='fa fa-long-arrow-up'></i></li>";
+    endif;
 
     echo "</ul></li>";
   }    
