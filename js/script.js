@@ -135,10 +135,10 @@ $(document).ready(function() {
                 // 'hideOnContentClick': false,
             }); 
     }); 
-       $(".btnEdit").on("click", function(event){
+       $(document).on("click", ".btnEdit", function(event){
         event.preventDefault();
         console.log("blabla");
-        var myId = $(event.target).attr("data-id_task");
+        var myId = $(event.target).parent().attr("data-id_task");
         console.log(myId);
         $.fancybox(
         $('#titi').html(),
