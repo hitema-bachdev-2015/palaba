@@ -117,23 +117,22 @@ $(document).ready(function() {
     /***DELETE TASK****/
     var id_to_delete;
     var li_to_delete;
-	$(document).on("mouseover", "#sortable > li > ul > li", function(event){
+	$(document).on("mouseover", "#sortable > li > div > ul > li", function(event){
         event.preventDefault();
         $(this).children(".btnDelete").css("display","block");
         $(this).children(".btnEdit").css("display","block");
-
-    });
-	$(document).on("mouseout", "#sortable > li > ul > li", function(event){
-        event.preventDefault();
-       // console.log($(this).children());
-       $(this).children(".btnDelete").css("display","none");
-       $(this).children(".btnEdit").css("display","none");
 
     });
     $(document).on("mouseover", "#lateTask > li > ul > li", function(event){
         event.preventDefault();
         $(this).children(".btnDelete").css("display","block");
        $(this).children(".btnEdit").css("display","block");
+    });
+	$(document).on("mouseout", "#sortable > li > div > ul > li", function(event){
+        event.preventDefault();
+       $(this).children(".btnDelete").css("display","none");
+       $(this).children(".btnEdit").css("display","none");
+
     });
     $(document).on("mouseout", "#lateTask > li > ul > li", function(event){
         event.preventDefault();
