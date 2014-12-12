@@ -291,16 +291,44 @@ $(document).ready(function() {
           data: {id :idToUpdate}
         });      
     });
+});
 
+  
+
+$("a.complete-task").click(function () {
+  $.fancybox(
+    $('#matthieu').html(),
+    {
+      'width'             : 950,
+      'height'            : 1100,
+      'autoScale'         : false,
+      'transitionIn'      : 'none',
+      'transitionOut'     : 'none',
+      'hideOnContentClick': false,
+      'onStart': function () {
+                //On Start callback if needed  
+              }
+            }
+            );
   $('.btnTaskComplete').on('click', function(){
-	 event.preventDefault();
+   event.preventDefault();
    console.log("Test 1 2 1 2 ");
-  $.ajax({
-          url: './ajax/completeTask.php',
-          type: 'POST',  
-        });
+   $.ajax({
+    url: './ajax/completeTask.php',
+    type: 'POST',  
+    beforeSend: function(){
+          //console.log("Loading");
+          $.fancybox.close();
+          loading();
+        },
+        success : function(data){
+          endLoading();
+        }
+      });
 
-  });
+ });
+
+});
 
   $("#exportDbh").on("click",function(){
     $.ajax({
