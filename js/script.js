@@ -18,6 +18,8 @@ $(document).ready(function() {
     		success: function(){
 				endLoading();
     			myLi.remove();
+                //Supprime le bouton Categorie correspondant
+                $("[id='btnTri_id" + myId + "']").remove();
     		}
     	});
     });
@@ -241,6 +243,26 @@ $(document).ready(function() {
     	});
     });
 	
+    //Gere les boutons de trie des categories
+    $(document).on("click",".btnTri",function(event) {
+        //Recupération du data-id et écriture d'un String
+        var data_id_cat = "[data-id_cat='" + $(this).val() + "']";      
+        //Affiche ou Masque la categorie
+        if($(data_id_cat).css('display') == 'none'  ){
+            $(data_id_cat).show();
+            $(this).css('background-color','orange');
+        }
+        else {
+            $(data_id_cat).hide();
+            $(this).css('background-color','red');
+        }
+    });
+    // Gere le bouton d'affichage de TOUTE les Categories
+    $(document).on("click",".btnTriTout",function(event) {
+        $('#sortable').children("li").show();
+        $('#tri_cat > .btnTri').css('background-color','orange');
+    });
+
 /** CHECK TASK*/
     $('.btnCheck').on('click', function(){
         $(this).css("color","black");
