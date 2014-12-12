@@ -82,7 +82,7 @@ class Task {
 		echo json_encode($reponse);
 	}
 
-	public function updateTask(){
+	public function updateTask($content,$date_end,$end_type){
 		global $dbh;
 		$req = "UPDATE task SET content = :content,
 		end_type = :end_type, 
@@ -91,9 +91,9 @@ class Task {
 		$query = $dbh->prepare($req);
 		$query->execute(array(
 			'id' => $this->id,
-			'content' => $this->content,
-			'end_type' => $this->end_type,
-			'date_end' => $this->date_end
+			'content' =>  $content,
+			'end_type' => $end_type,
+			'date_end' => $date_end
 		));
 		
 	}
