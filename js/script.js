@@ -28,6 +28,10 @@ $(document).ready(function() {
     var task = new Task();
     task.moveTask();
 
+    $(".next").on('click', function(event){
+        $(this).parent().css('height', 'auto');
+        $(this).hide();
+    });
     
     $("#datepicker").datetimepicker();
     $("#datepicker").hide();
