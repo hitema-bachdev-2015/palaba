@@ -227,12 +227,13 @@ $(document).ready(function() {
             data: {ID :id_to_delete},
 			 beforeSend: function(){
 			 	//console.log("Loading");
+                $.fancybox.close();
 			 	loading();
 			},
             success : function(data){
 				endLoading();
                 li_to_delete.remove();
-                $.fancybox.close();
+                
                 location.assign(location.href);
             }
         });
