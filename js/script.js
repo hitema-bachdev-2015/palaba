@@ -240,67 +240,8 @@ $(document).ready(function() {
     		});
     	});
     });
-	/***UPDATE TASK ***/
-    $("btnEdit").on("click",function (event) {
-	// console.log("a");
-
-	event.preventDefault();
-	var myId = $(event.target).attr("data-id_task");
-	//console.log(myId);
-
-	$.ajax({
-		url: "ajax/displayTask.php",
-		type: "POST",
-		data: { name: myId },
-		beforeSend: function(){
-				//console.log("Loading");
-				loading();
-		},
-		success: function(data){
-			var content = JSON.parse(data);
-			//console.log(content);
-			endLoading();
-			$(".nameTaskUp").val(content['content']);
-			$(".date_end").datetimepicker();
-			$(".typeTask").val(content['end_type']);
-			$(".date_end").val(content['date_end']);
-			$(".btnOkFormEdit").click(function () {
-				event.preventDefault();
-				var date = $(".date_end").val();
-				var content = $(".typeTask").val();
-				var typeTask = $(".end_type").val();
-				$.ajax({
-					url: "ajax/updateTask.php",
-					type: "POST",
-					data: { name: content,
-						date: date,
-						type: typeTask 
-					},
-					beforeSend: function(){
-						//console.log("Loading");
-						loading();
-					},
-					success: function(data){
-						var content = JSON.parse(data);
-						console.log(content);
-						endLoading();
-						$(".nameTaskUp").val(content['content']);
-						console.log($(".date_end").val());
-					}
-				});
-			});
-		}
-	});
-	$.fancybox(
-		$('#btnEditi').html(),
-		{
-			'onStart': function () {
-
-			}
-		}
-		);
-
-    /** CHECK TASK*/
+	
+/** CHECK TASK*/
     $('.btnCheck').on('click', function(){
         $(this).css("color","black");
         var idToUpdate = $(this).parent().attr('data-id_task');
@@ -310,8 +251,6 @@ $(document).ready(function() {
           data: {id :idToUpdate}
         });      
     });
-
-});
 
   $('.btnTaskComplete').on('click', function(){
 	 event.preventDefault();
