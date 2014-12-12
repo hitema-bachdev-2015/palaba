@@ -67,6 +67,8 @@ function addTask(params){
 		$(li).attr("data-id_task", id);  
 		$(li).append( "<i class=\"fa fa-check btnCheck\"></i>" );
 		$(li).append("<i id=\"btnDeleteI\" class=\"fa fa-trash btnDelete\"></i>");
+		$(li).append("<i id=\"btnEditi\" class=\"fa fa-eyedropper btnEdit\"></i>");
+
 		if(position==0)
 		{
 			var ul = document.createElement("ul");
