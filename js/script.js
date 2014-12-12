@@ -233,8 +233,6 @@ $(document).ready(function() {
             success : function(data){
 				endLoading();
                 li_to_delete.remove();
-                
-                location.assign(location.href);
             }
         });
     });
