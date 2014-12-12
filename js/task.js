@@ -48,7 +48,7 @@ function endLoading()
 }
 function addTask(params){
 	console.log(params);
-	if(params!="empty")
+	if(params.error=="false")
 	{
 		//Mise de l'id de l'élément dans une variable
 		var id=params.id_task;
@@ -92,6 +92,27 @@ function addTask(params){
 					break;
 			}
 		}
+	}
+	else if(params.error=="true")
+	{
+		$.fancybox(
+    		$('#error_same_task').html(),
+    		{
+    			'width'             : 950,
+    			'height'            : 1100,
+    			'autoScale'         : false,
+    			'transitionIn'      : 'none',
+    			'transitionOut'     : 'none',
+    			'hideOnContentClick': false,
+    			'onStart': function () {
+                //On Start callback if needed  
+            }
+        });
+
+        $(document).on("click","#Ok",function(event) {
+       		event.preventDefault();
+       		$.fancybox.close();
+    	});
 	}
 }
 

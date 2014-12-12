@@ -44,6 +44,7 @@ require_once('classes/Tools.php');
 		<nav class="wrap"><ul><li></li></ul></nav>
 	</header>
 	<?php include('includes/add-task.php'); ?>
+
 	<div class="wrap content">
 		<div id="column-left"></div>
 		<div id="contener">
@@ -52,6 +53,7 @@ require_once('classes/Tools.php');
 			<span id='exportDbh'>Export DBH</span>
 			<?php include('includes/add-category.php'); ?>
 			<?php include('includes/confirm-delete.php'); ?>
+			<?php include('includes/sameTask.php'); ?>
 			<?php include('includes/tasks-complete.php'); ?>
 			<?php include('includes/edittask.php'); ?>
 		</div>
