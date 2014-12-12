@@ -126,11 +126,10 @@ $(document).ready(function() {
             type : "POST",
             cache   : false,
             data: {ID :id_to_delete},
-			// beforeSend: function(){
-			// 	//console.log("Loading");
-			// 	$.fancybox.close();
-			// 	loading();
-			// },
+			 beforeSend: function(){
+			 	//console.log("Loading");
+			 	loading();
+			},
             success : function(data){
 				endLoading();
                 li_to_delete.remove();
