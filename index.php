@@ -11,7 +11,11 @@ require_once('classes/Tools.php');
 	<meta charset="utf-8">
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<?php if(isset($_GET['newstyle'])){ ?>
+	<link rel="stylesheet" type="text/css" href="css/newstyle.css">
+	<?php }else{ ?>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<?php } ?>
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css">
 	<link rel="stylesheet" href="css/jquery-ui.css" />
