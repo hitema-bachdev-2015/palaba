@@ -126,6 +126,16 @@ $(document).ready(function() {
        $(this).children(".btnEdit").css("display","none");
 
     });
+    $(document).on("mouseover", "#lateTask > li > ul > li", function(event){
+        event.preventDefault();
+        $(this).children(".btnDelete").css("display","block");
+       $(this).children(".btnEdit").css("display","block");
+    });
+    $(document).on("mouseout", "#lateTask > li > ul > li", function(event){
+        event.preventDefault();
+       $(this).children(".btnDelete").css("display","none");
+       $(this).children(".btnEdit").css("display","none");
+    });
    $(document).on("click", ".btnDelete", function(event){
         event.preventDefault();
         id_to_delete= $(this).parent().attr('data-id_task');
