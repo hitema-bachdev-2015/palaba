@@ -32,7 +32,7 @@
       if($task->getStatus() == 2){
         $check = 'checked';
       }
-      echo "<li data-id_task ='".$task->getId()."''> <i class='fa fa-check btnCheck ".$check."'></i>".$task->getContent()." <i  id='btnDeleteI' class='fa fa-trash btnDelete' style='float: right;'></i></li>";
+      echo "<li data-id_task ='".$task->getId()."''> <i class='fa fa-check btnCheck ".$check."'></i>".$task->getContent()." <i  id='btnDeleteI' class='fa fa-trash btnDelete' style='float: right;'></i> <i  id='btnEditi' class='fa fa-eyedropper btnEdit';'></i></li>";
     }
 
     echo "</ul></li>";
