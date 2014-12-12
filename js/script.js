@@ -264,7 +264,7 @@ $(document).ready(function() {
     });
 
 /** CHECK TASK*/
-    $('.btnCheck').on('click', function(){
+    $(document).on("click",'.btnCheck',function() {
         $(this).css("color","black");
         var idToUpdate = $(this).parent().attr('data-id_task');
         $.ajax({
