@@ -12,7 +12,12 @@
     	</label>
     	<label>
     		<span>Type de fin :</span>
-    		<input type="text" name="task-type" class="typeTask" placeholder="Tache de la tache">
+                <select name="task-type" class="typeTask">
+            <option value="0">Au plus tot</option>
+            <option value="1">Date precise</option>
+            <option value="2">Avant de mourir</option>
+        </select>
+    		<!-- <input type="text" name="task-type" class="typeTask" placeholder="Tache de la tache"> -->
     	</label>
     	<label>
     		<span>Date de fin :</span>
@@ -21,8 +26,7 @@
     	</label>
         <input type="submit" class="btnOkFormEdit" value="OK">
     </form>
-    <br>Caption.
-    0: Au plus tot    1: Date precise   2:Before die
+   
     
 
 
