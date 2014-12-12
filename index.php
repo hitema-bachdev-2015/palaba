@@ -35,23 +35,26 @@ require_once('classes/Tools.php');
 	<script type="text/javascript" src="js/fancybox/helpers/jquery.fancybox-buttons.js"></script>
 	<script type="text/javascript" src="js/fancybox/helpers/jquery.fancybox-media.js"></script>
 	<script type="text/javascript" src="js/fancybox/helpers/jquery.fancybox-thumbs.js"></script>
-	<script type="text/javascript" src="js/anorak.js"></script>
+	<!-- // <script type="text/javascript" src="js/anorak.js"></script> -->
 	<script type="text/javascript" src="js/nc.js"></script>
 </head>
 <body>	
-<canvas id="canvas"></canvas>
+	<canvas id="canvas"></canvas>
+	<header id="header-site">
+		<nav class="wrap"><ul><li></li></ul></nav>
+	</header>
 	<?php include('includes/add-task.php'); ?>
-
-	<div id="contener">
-		<h1>Gestionnaire de tache</h1>
-		<?php include('includes/content.php'); ?>
-		<span id='exportDbh'>Export DBH</span>
-		<?php include('includes/add-category.php'); ?>
-		<?php include('includes/confirm-delete.php'); ?>
-		<?php include('includes/tasks-complete.php'); ?>
-		<?php include('includes/edittask.php'); ?>
-
-
+	<div class="wrap content">
+		<div id="column-left"></div>
+		<div id="contener">
+			<h1>Gestionnaire de tache</h1>
+			<?php include('includes/content.php'); ?>
+			<span id='exportDbh'>Export DBH</span>
+			<?php include('includes/add-category.php'); ?>
+			<?php include('includes/confirm-delete.php'); ?>
+			<?php include('includes/tasks-complete.php'); ?>
+			<?php include('includes/edittask.php'); ?>
+		</div>
 	</div>
 	<?php include('includes/footer.php'); ?>
 
