@@ -71,7 +71,8 @@ function addTask(params){
 
 		if(position==0)
 		{
-			var ul = document.createElement("ul");
+			//var ul = document.createElement("ul");
+			var ul=$("#sortable li[data-id_cat=\""+idCat+"\"]")
 			$(ul).append(li);
 			parentContainer.append( $(ul) );
 		}
