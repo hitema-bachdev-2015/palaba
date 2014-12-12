@@ -1,10 +1,14 @@
 
+var harlem = false;
 function KonamiCode(id){
 	if(id==1){
 		$('body').addClass('turn');
 	}
 	else if(id == 2){
-		HarlemShake();
+        if(!harlem){
+		  HarlemShake();
+          harlem = true;  
+        }
 	}
     else if(id == 3){
         $('body').addClass('hidden');
@@ -294,13 +298,13 @@ function HarlemShake() {
     var n = 350;
     var r = 350;
     var i =
-        "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+        "audio/harlem-shake.mp3";
     var s = "mw-harlem_shake_me";
     var o = "im_first";
     var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
     var a = "mw-strobe_light";
     var f =
-        "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+        "css/harlem-shake-style.css";
     var l = "mw_added_css";
     var b = g();
     var w = y();
