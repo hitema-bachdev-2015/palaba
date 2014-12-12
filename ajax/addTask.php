@@ -9,9 +9,12 @@ $end_date=$_POST["END_TYPE_TASK"];
 
 if($content!="")
 {
-	$query2 = "SELECT id FROM `task` WHERE `id_category`='".$category."'AND content='".$content."'";
+	$query2 = "SELECT id FROM `task` WHERE `id_category`=:category AND content=:content";
 	$sth2 = $dbh->prepare($query2);
-	$sth2->execute();
+	$sth2->execute(array(
+			":category"=>$category,
+			":content"=>$content
+	));
 	$total =$sth2->rowCount();
 	if($total!=0)
 	{
