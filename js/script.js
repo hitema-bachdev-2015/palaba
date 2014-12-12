@@ -118,6 +118,64 @@ $(document).ready(function() {
                 // 'hideOnContentClick': false,
             }); 
     }); 
+      $(".btnEdit").on("click", function(event){
+        event.preventDefault();
+        console.log("blabla");
+        var myId = $(event.target).attr("data-id_task");
+        console.log(myId);
+        $.fancybox(
+        $('#titi').html(),
+        {
+            'onStart': function () {
+
+            }
+        }
+        );
+        $.ajax({
+        url: "ajax/displayTask.php",
+        type: "POST",
+        data: { name: myId },
+        beforeSend: function(){
+                //console.log("Loading");
+                loading();
+        },
+        success: function(data){
+            var content = JSON.parse(data);
+            //console.log(content);
+            endLoading();
+            $(".nameTaskUp").val(content['content']);
+            $(".date_end").datetimepicker();
+            $(".typeTask").val(content['end_type']);
+            $(".date_end").val(content['date_end']);
+            $(".btnOkFormEdit").click(function () {
+                event.preventDefault();
+                var date = $(".date_end").val();
+                var content = $(".typeTask").val();
+                var typeTask = $(".end_type").val();
+                $.ajax({
+                    url: "ajax/updateTask.php",
+                    type: "POST",
+                    data: { name: content,
+                        date: date,
+                        type: typeTask 
+                    },
+                    beforeSend: function(){
+                        //console.log("Loading");
+                        loading();
+                    },
+                    success: function(data){
+                        var content = JSON.parse(data);
+                        console.log(content);
+                        endLoading();
+                        $(".nameTaskUp").val(content['content']);
+                        console.log($(".date_end").val());
+                    }
+                });
+            });
+        }
+    });
+
+    }); 
     $(document).on("click","#confirmDelete",function(event) {
         event.preventDefault();
         var that = $(this);
