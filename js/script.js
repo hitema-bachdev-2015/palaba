@@ -29,7 +29,10 @@ $(document).ready(function() {
     task.moveTask();
 
     $(".next").on('click', function(event){
-        $(this).parent().css('height', 'auto');
+        $(this).parent().css({
+            height : 'auto', 
+            overflow : 'auto',
+        });
         $(this).hide();
     });
     
