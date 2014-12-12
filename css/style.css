@@ -27,6 +27,11 @@ h1 {
 
 /* ADD TASK */
 .sortableTask {
+	/*height: 310px;
+	overflow: hidden;*/
+}
+.myElement{
+	
 	height: 310px;
 	overflow: hidden;
 }
@@ -268,7 +273,7 @@ footer {
 	text-align: center;
 	cursor: pointer;
 }
-#lateTask > li > ul > li {
+#lateTask > li > .myElement > ul > li {
 	background: rgb(235, 235, 235);
 	padding: 7px;
 	border-bottom: 1px solid #bbb;
@@ -320,11 +325,11 @@ footer {
 	color: #fff;
 }
 
-#sortable > li > ul > li > i {
+#sortable > li > .myElement > ul > li > i {
 	float: right;
 }
 
-#sortable > li > ul > li {
+#sortable > li > .myElement > ul > li {
 	background: rgb(235, 235, 235);
 	padding: 7px;
 	border-bottom: 1px solid #bbb;
@@ -377,17 +382,17 @@ footer {
 }
 
 /* check task*/
-#sortable > li > ul> li> .btnCheck{
+#sortable > li > .myElement > ul> li> .btnCheck{
 	color : darkgrey;
 	float: left;
 	padding-right: 5px;
 }
 
-#sortable > li > ul> li> .btnCheck.checked{
+#sortable > li > .myElement > ul> li> .btnCheck.checked{
 	color : black;
 }
 
-#sortable > li > ul> li> .btnCheck:hover{
+#sortable > li > .myElement > ul> li> .btnCheck:hover{
 	color : black;
 	cursor: pointer;
 }

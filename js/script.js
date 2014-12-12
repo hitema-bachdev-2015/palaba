@@ -29,20 +29,24 @@ $(document).ready(function() {
     task.moveTask();
 
     $(".next").on('click', function(event){
-        $(this).parent().css({
-            height : 'auto', 
+        $(this).parent().parent().animate({
+            height : $(this).parent().height()-32, 
             overflow : 'auto',
         });
         $(this).hide();
     });
 
     $(".preview").on('click', function(event){
-        $(this).parent().css({
+        $(this).parent().parent().animate({
             height : '310px', 
             overflow : 'hidden',
+          },
+          400, 
+          function() {
+            $(".next").show();
         });
-        $(".next").show();
     });
+    
     
     $("#datepicker").datetimepicker();
     $("#datepicker").hide();
