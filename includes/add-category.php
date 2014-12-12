@@ -1,4 +1,3 @@
-<div class="clear both"></div>
 <div class="add-cat">
     <a class="fancybox add-cat" rel="nofollow" href="#">+</a>
 </div>

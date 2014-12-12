@@ -28,6 +28,13 @@ $(document).ready(function() {
     var task = new Task();
     task.moveTask();
 
+    $(".next").on('click', function(event){
+        $(this).parent().css({
+            height : 'auto', 
+            overflow : 'auto',
+        });
+        $(this).hide();
+    });
     
     $("#datepicker").datetimepicker();
     $("#datepicker").hide();
@@ -128,10 +135,10 @@ $(document).ready(function() {
                 // 'hideOnContentClick': false,
             }); 
     }); 
-      $(".btnEdit").on("click", function(event){
+       $(document).on("click", ".btnEdit", function(event){
         event.preventDefault();
         console.log("blabla");
-        var myId = $(event.target).attr("data-id_task");
+        var myId = $(event.target).parent().attr("data-id_task");
         console.log(myId);
         $.fancybox(
         $('#titi').html(),
@@ -153,19 +160,22 @@ $(document).ready(function() {
             var content = JSON.parse(data);
             //console.log(content);
             endLoading();
-            $(".nameTaskUp").val(content['content']);
-            $(".date_end").datetimepicker();
-            $(".typeTask").val(content['end_type']);
-            $(".date_end").val(content['date_end']);
+            $(".fancybox-inner .nameTaskUp").val(content['content']);
+            $(".fancybox-inner .date_end").datetimepicker();
+            $(".fancybox-inner .typeTask").val(content['end_type']);
+            $(".fancybox-inner .date_end").val(content['date_end']);
             $(".btnOkFormEdit").click(function () {
                 event.preventDefault();
-                var date = $(".date_end").val();
-                var content = $(".typeTask").val();
-                var typeTask = $(".end_type").val();
+                var date = $(".fancybox-inner .date_end").val();
+                var content = $(".fancybox-inner .nameTaskUp").val();
+                var typeTask = $(".fancybox-inner .typeTask").val();
+                console.log(myId,content,typeTask,date);
                 $.ajax({
                     url: "ajax/updateTask.php",
                     type: "POST",
-                    data: { name: content,
+                    data: { 
+                        id: myId,
+                        name: content,
                         date: date,
                         type: typeTask 
                     },
@@ -272,7 +282,7 @@ $(document).ready(function() {
     });
 
 /** CHECK TASK*/
-    $('.btnCheck').on('click', function(){
+    $(document).on("click",'.btnCheck',function() {
         $(this).css("color","black");
         var idToUpdate = $(this).parent().attr('data-id_task');
         $.ajax({
@@ -281,16 +291,44 @@ $(document).ready(function() {
           data: {id :idToUpdate}
         });      
     });
+});
 
+  
+
+$("a.complete-task").click(function () {
+  $.fancybox(
+    $('#matthieu').html(),
+    {
+      'width'             : 950,
+      'height'            : 1100,
+      'autoScale'         : false,
+      'transitionIn'      : 'none',
+      'transitionOut'     : 'none',
+      'hideOnContentClick': false,
+      'onStart': function () {
+                //On Start callback if needed  
+              }
+            }
+            );
   $('.btnTaskComplete').on('click', function(){
-	 event.preventDefault();
+   event.preventDefault();
    console.log("Test 1 2 1 2 ");
-  $.ajax({
-          url: './ajax/completeTask.php',
-          type: 'POST',  
-        });
+   $.ajax({
+    url: './ajax/completeTask.php',
+    type: 'POST',  
+    beforeSend: function(){
+          //console.log("Loading");
+          $.fancybox.close();
+          loading();
+        },
+        success : function(data){
+          endLoading();
+        }
+      });
 
-  });
+ });
+
+});
 
   $("#exportDbh").on("click",function(){
     $.ajax({

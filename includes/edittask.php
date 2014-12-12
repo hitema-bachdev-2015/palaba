@@ -21,4 +21,9 @@
     	</label>
         <input type="submit" class="btnOkFormEdit" value="OK">
     </form>
+    <br>Caption.
+    0: Au plus tot    1: Date precise   2:Before die
+    
+
+
 </div>
