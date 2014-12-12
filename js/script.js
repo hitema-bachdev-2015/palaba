@@ -43,7 +43,15 @@ $(document).ready(function() {
 	$("#cont-task").keyup(function(){
 		var valText = $("#cont-task").val().trim();
 			if(valText != null || valText != ''){
-				$("#forKeyup").stop().slideDown().show();
+               if ($("#forKeyup").is(":animated")==true)
+               {
+                stop();
+               }
+               else
+               {
+                $("#forKeyup").slideDown().show();  
+                }
+
 			}
 			if(valText == null || valText == ''){
 				$("#forKeyup").stop().slideUp();
