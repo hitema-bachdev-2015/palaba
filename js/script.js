@@ -276,8 +276,6 @@ $(document).ready(function() {
 					loading();
 				},
 				success : function(data){
-                    // Pour actualiser la page
-                    location.assign("./");
 					endLoading();
 				}
     		});
