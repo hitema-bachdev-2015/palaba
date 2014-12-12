@@ -336,6 +336,11 @@ footer {
 	display: none;
 }
 
+#sortable > li > ul> li> #btnEditi{
+	color : blue;
+	display: none;
+}
+
 /* check task*/
 #sortable > li > ul> li> .btnCheck{
 	color : darkgrey;
