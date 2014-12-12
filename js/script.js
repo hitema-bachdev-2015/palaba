@@ -232,7 +232,9 @@ $(document).ready(function() {
 			},
             success : function(data){
 				endLoading();
-                li_to_delete.remove();
+                //li_to_delete.remove();
+                $("ul#lateTask li[data-id_task=\""+id_to_delete+"\"]").remove();
+                $("#sortable li[data-id_cat] li[data-id_task=\""+id_to_delete+"\"]").remove();
             }
         });
     });
