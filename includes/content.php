@@ -33,6 +33,9 @@
         $check = 'checked';
       }
       echo "<li data-id_task ='".$task->getId()."''> <i class='fa fa-check btnCheck ".$check."'></i>".$task->getContent()." <i  id='btnDeleteI' class='fa fa-trash btnDelete' style='float: right;'></i> <i id='btnEditi' data-id_task ='".$task->getId()."' class='fa fa-eyedropper btnEdit';'></i></li>";
+      if($key == 8 ):
+        echo "<li class='next'>...</li>";
+      endif;
     }
 
     echo "</ul></li>";
