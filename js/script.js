@@ -163,7 +163,6 @@ $(document).ready(function() {
                 var content = $(".fancybox-inner .nameTaskUp").val();
                 var typeTask = $(".fancybox-inner .typeTask").val();
                 console.log(myId,content,typeTask,date);
-                debugger;
                 $.ajax({
                     url: "ajax/updateTask.php",
                     type: "POST",
