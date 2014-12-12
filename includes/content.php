@@ -3,9 +3,11 @@
 <ul>
 <?php
 	foreach (Tools::getLateTask() as $taskLate) {
-		echo "<li>";
-		echo $taskLate['content'];
-		echo "</li>";
+		echo "<li data-id_task=".$taskLate['id'].">";
+    echo $taskLate['content'];
+    echo "<i id='btnDeleteI' class='fa fa-trash btnDelete' style='float: right;'></i>";
+    echo "<i id='btnEditi' data-id_task ='".$taskLate['id']."' class='fa fa-eyedropper btnEdit' style='float: right;'></i>";
+    echo "</li>";
 	}
 ?>
 </ul>

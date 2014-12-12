@@ -371,12 +371,7 @@ footer {
 	border-radius: 3px;
 }
 
-#sortable > li > ul> li> #btnDeleteI{
-	color : blue;
-	display: none;
-}
-
-#sortable > li > ul> li> #btnEditi{
+#btnDeleteI, #btnEditi{
 	color : blue;
 	display: none;
 }
