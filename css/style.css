@@ -26,6 +26,14 @@ h1 {
 }
 
 /* ADD TASK */
+.sortableTask {
+	height: 310px;
+	overflow: hidden;
+}
+.next{
+	text-align:center; 
+	cursor:pointer;
+}
 #add-task {
 	min-width: 800px;
 	width: 100%;
