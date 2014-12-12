@@ -101,7 +101,7 @@ $(document).ready(function() {
        $(this).children(".btnEdit").css("display","none");
 
     });
-    $(".btnDelete").click(function(event){
+   $(document).on("click", ".btnDelete", function(event){
         event.preventDefault();
         id_to_delete= $(this).parent().attr('data-id_task');
         li_to_delete = $(this).parent();
