@@ -1,3 +1,11 @@
-<form method="POST" action="" class="complete-task">
-	<input type="submit" value="Marquer les tâches comme faites" class="btnTaskComplete">
-</form>
+<div class="clear both"></div>
+<div class="complete-task">
+    <a class="fancybox complete-task" rel="nofollow" href="#"> All Tasks Completes </a>
+</div>
+
+<div id="matthieu" style="display:none;">
+	<form method="POST" action="">
+		<h2 style="color: rgb(65, 131, 215);">Would you want to mark all takes as completes</h2><br>
+		<input type="submit" value="Yes" class="btnTaskComplete">
+	</form>
+</div>
