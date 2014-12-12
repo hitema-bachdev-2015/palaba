@@ -1,6 +1,6 @@
 <div class="clear both"></div>
 <div class="complete-task">
-    <a class="fancybox complete-task" rel="nofollow" href="#"> All Tasks Completes </a>
+    <a class="fancybox complete-task" rel="nofollow" href="#"><i class="fa fa-check-circle-o"></i></a>
 </div>
 
 <div id="matthieu" style="display:none;">
