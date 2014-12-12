@@ -226,12 +226,14 @@ $(document).ready(function() {
             cache   : false,
             data: {ID :id_to_delete},
 			 beforeSend: function(){
+			 	//console.log("Loading");
                 $.fancybox.close();
 			 	loading();
 			},
             success : function(data){
 				endLoading();
                 li_to_delete.remove();
+                
                 location.assign(location.href);
             }
         });
@@ -270,11 +272,12 @@ $(document).ready(function() {
     			type: 'POST',
     			data: { name: newCat },
 				beforeSend: function(){
-					//console.log("Loading");
 					$.fancybox.close();
 					loading();
 				},
 				success : function(data){
+                    // Pour actualiser la page
+                    location.assign("./");
 					endLoading();
 				}
     		});
