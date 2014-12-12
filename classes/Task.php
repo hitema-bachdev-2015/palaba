@@ -26,6 +26,10 @@ class Task {
 		$this->end_type = $et;
 	}
 
+	public function setCat($de){
+		$this->id_category = $de;
+	}
+
 	public function setStatus($s){
 		$this->status = $s;
 	}
@@ -90,6 +94,18 @@ class Task {
 			'content' => $this->content,
 			'end_type' => $this->end_type,
 			'date_end' => $this->date_end
+		));
+		
+	}
+
+	public function updateCat($variable){
+		global $dbh;
+		$req = "UPDATE task SET id_category = :category WHERE id= :id";
+
+		$query = $dbh->prepare($req);
+		$query->execute(array(
+			'id' => $this->id,
+			'category' => $variable
 		));
 		
 	}

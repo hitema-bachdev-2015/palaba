@@ -22,6 +22,10 @@ $(document).ready(function() {
     	});
     });
 
+
+    var task = new Task();
+    task.moveTask();
+
     
     $("#datepicker").datetimepicker();
     $("#datepicker").hide();

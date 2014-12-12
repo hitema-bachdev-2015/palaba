@@ -1,13 +1,37 @@
-/*var Task=function(params){
-	this.id=params.id;
-	this.idCategory = params.idCategory;
-	this.content = params.content;
-	this.dateEnd = params.dateEnd;
-	this.endType = params.endType;
-	this.status = params.status;
+var Task=function(params){
+	// this.id=params.id;
+	// this.idCategory = params.idCategory;
+	// this.content = params.content;
+	// this.dateEnd = params.dateEnd;
+	// this.endType = params.endType;
+	// this.status = params.status;
 	
-	addTask(params);
-}*/
+	// addTask(params);
+}
+
+Task.prototype.moveTask=function(){
+    $( ".sortableTask" ).sortable({
+      	connectWith: ".sortableTask",
+    	// handle: "",
+    	revert: true,
+    	update: function(event){
+    		$(" .sortableTask > li").each(function(){
+          		var myId = $(this).attr('data-id_task');
+          		var myIdCat = $(this)[0].parentNode.parentNode.attributes[0].value;
+    			console.log(myId+" "+myIdCat);
+    			$.ajax({
+		    		url: "ajax/taskChangeCat.php",
+		    		type: "POST",
+		    		data: { id: myId , id_cat: myIdCat},
+		    		success: function(data){
+		    			console.log(data);
+		    		}
+		    	});
+    		});
+    	}
+    }).disableSelection();
+}
+
 function loading()
 {
 	$("#contener").css("opacity", "0.5");

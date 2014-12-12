@@ -24,7 +24,7 @@
     <h2>".$cat->getName()."</h2>
     <i data-id_cat='".$cat->getId()."'><i class='fa fa-times'></i></i>
     </header>
-    <ul>"; 
+    <ul class='sortableTask'>"; 
     foreach($cat->getTasks() as $task){
       $task->hydrate();
 
