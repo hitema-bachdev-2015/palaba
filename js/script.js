@@ -91,11 +91,15 @@ $(document).ready(function() {
 	$(document).on("mouseover", "#sortable > li > ul > li", function(event){
         event.preventDefault();
         $(this).children(".btnDelete").css("display","block");
+        $(this).children(".btnEdit").css("display","block");
+
     });
 	$(document).on("mouseout", "#sortable > li > ul > li", function(event){
         event.preventDefault();
        // console.log($(this).children());
        $(this).children(".btnDelete").css("display","none");
+       $(this).children(".btnEdit").css("display","none");
+
     });
     $(".btnDelete").click(function(event){
         event.preventDefault();
@@ -180,7 +184,7 @@ $(document).ready(function() {
     	});
     });
 	/***UPDATE TASK ***/
-    $("#sortable > li > ul > li").on("click",function (event) {
+    $("btnEdit").on("click",function (event) {
 	// console.log("a");
 
 	event.preventDefault();
@@ -230,15 +234,14 @@ $(document).ready(function() {
 			});
 		}
 	});
-    //pas touche à cette partie je verrais ça demain
-	// $.fancybox(
-	// 	$('#titi').html(),
-	// 	{
-	// 		'onStart': function () {
+	$.fancybox(
+		$('#btnEditi').html(),
+		{
+			'onStart': function () {
 
-	// 		}
-	// 	}
-	// 	);
+			}
+		}
+		);
 
     /** CHECK TASK*/
     $('.btnCheck').on('click', function(){
